@@ -1,0 +1,11 @@
+{
+    "name": "sample-page-3-main",
+    "version": "1.0.0",
+    "type": "component",
+    "description": "Site shell for sample page 3: WebGL stage, navigation, footer, and a pjax-style router that swaps page views.",
+    "dependencies": {
+        "gsap": "^3.15.1",
+        "three": "^0.177.0"
+    },
+    "assets": []
+}

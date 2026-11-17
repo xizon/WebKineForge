@@ -1,0 +1,19 @@
+{
+    "name": "samplepage-3--about",
+    "version": "1.0.0",
+    "type": "page",
+    "output": "samplepage-3--about.html",
+    "bodyClass": "wkf-page wkf-samplepage wkf-samplepage--about",
+    "seo": {
+        "lang": "en-US",
+        "title": "Sample Page 3 (About)",
+        "description": "Sample page 3 (About).",
+        "keywords": [],
+        "canonical": ""
+    },
+    "entry": {
+        "template": "./index.tsx",
+        "client": "./index.tsx",
+        "styles": "./style.css"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "name": "scene-item",
+    "version": "1.0.0",
+    "type": "component",
+    "description": "One stacked frame inside Scenes",
+    "dependencies": {},
+    "assets": []
+}

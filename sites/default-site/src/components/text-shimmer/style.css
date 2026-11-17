@@ -1,0 +1,28 @@
+.wkf-text-shimmer {
+    display: inline-block;
+    color: #1e1f21;
+    background: linear-gradient(110deg, #aab4c8 0%, #747678 40%, #ffffff 48%, #202021 52%, #aab4c8 60%, #aab4c8 100%);
+    background-size: 250% 100%;
+    background-position: 100% 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: wkf-text-shimmer 3s linear infinite;
+}
+
+@keyframes wkf-text-shimmer {
+    from {
+        background-position: 100% 0;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wkf-text-shimmer {
+        animation: none;
+        background-position: 0 0;
+    }
+}

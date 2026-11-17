@@ -1,0 +1,198 @@
+.wkf-pricing-cards {
+    display: flex;
+    min-height: 100svh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 1.25rem;
+    padding-bottom: 4rem;
+    padding-top: 7rem;
+    color: #fff;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    .wkf-pricing-cards__inner {
+        max-width: 1120px;
+        margin-inline: auto;
+    }
+
+    .wkf-pricing-cards__header {
+        margin-bottom: 2.5rem;
+        max-width: 36rem;
+    }
+
+    .wkf-pricing-cards__kicker {
+        margin: 0;
+        font-family: 'DM Mono', monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #75809a;
+    }
+
+    .wkf-pricing-cards__title {
+        margin-bottom: 0.75rem;
+        margin-top: 0.75rem;
+        font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: clamp(34px, 5vw, 64px);
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    .wkf-pricing-cards__description {
+        margin: 0;
+        max-width: 32rem;
+        font-size: 15px;
+        line-height: 1.625;
+        color: #a3aab8;
+    }
+
+    .wkf-pricing-cards__grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 1rem;
+
+        /* tailwind md: 48rem */
+        @media (width >= 48rem) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    .wkf-pricing-cards__meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
+
+    .wkf-pricing-cards__name {
+        margin: 0;
+        font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: 1.35rem;
+        font-weight: 400;
+    }
+
+    .wkf-pricing-cards__badge {
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background-color: rgba(8, 8, 8, 0.72);
+        padding-inline: 0.75rem;
+        padding-block: 0.25rem;
+        font-family: 'DM Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.04em;
+        color: #d7dbe4;
+    }
+
+    .wkf-pricing-cards__price {
+        margin: 0;
+        margin-top: 1.5rem;
+        font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: clamp(40px, 4vw, 56px);
+        line-height: 1;
+    }
+
+    .wkf-pricing-cards__cadence {
+        margin-left: 0.5rem;
+        font-family: 'DM Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        color: #75809a;
+    }
+
+    .wkf-pricing-cards__summary {
+        margin-top: 1rem;
+        margin-bottom: 0;
+        font-size: 14px;
+        line-height: 1.625;
+        color: #a3aab8;
+    }
+
+    .wkf-pricing-cards__features {
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        display: flex;
+        list-style-type: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0;
+        font-size: 14px;
+        color: #d7dbe4;
+    }
+
+    .wkf-pricing-cards__card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background-color: rgba(255, 255, 255, 0.04);
+        padding: 1.5rem;
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+            opacity 0.9s ease,
+            transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+
+    .wkf-pricing-cards__card--featured {
+
+        .wkf-pricing-cards__action {
+            background: #050505;
+            border-color: #0a0a0a;
+
+        }
+    }
+
+    .wkf-pricing-cards__action {
+        margin-top: auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding-inline: 1rem;
+        padding-block: 0.75rem;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        color: inherit;
+        text-decoration-line: none;
+        transition: all .3s;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.45);
+            transform: translateY(-3px);
+        }
+
+    }
+
+    .wkf-pricing-cards__feature {
+        position: relative;
+        padding-left: 14px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0.55em;
+            left: 0;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #75809a;
+        }
+    }
+}

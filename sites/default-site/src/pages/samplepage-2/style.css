@@ -1,0 +1,83 @@
+/* 1. Ambient Dot Grid & Floating Aurora Blobs */
+@keyframes wkf-float-slow {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -25px) scale(1.06);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.96);
+    }
+}
+
+@keyframes wkf-float-reverse {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-35px, -30px) scale(1.08);
+    }
+}
+
+@keyframes wkf-spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 2. Scroll Reveal States */
+[data-wkf-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+[data-wkf-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. 3D Tilt & Radial Spotlight Cards */
+[data-wkf-tilt] {
+    transform-style: preserve-3d;
+    transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+    position: relative;
+}
+
+[data-wkf-tilt]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(255, 255, 255, 0.45),
+            transparent 40%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+}
+
+[data-wkf-tilt]:hover::after {
+    opacity: 1;
+}
+
+/* 4. Magnetic Button Transition */
+[data-wkf-magnetic] {
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+    will-change: transform;
+}

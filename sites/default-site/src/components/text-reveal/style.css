@@ -1,0 +1,95 @@
+.wkf-text-reveal {
+    display: flex;
+    min-height: 100svh;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background-image: radial-gradient(ellipse at 70% 50%, #370824 0%, #2a0825 45%, #1d0819 78%);
+
+    .wkf-text-reveal__body {
+        margin-inline: auto;
+        display: flex;
+        width: 100%;
+        max-width: 1440px;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        padding-inline: 1.5rem;
+        padding-block: 4rem;
+
+        /* tailwind md: 48rem */
+        @media (width >= 48rem) {
+            flex-direction: row;
+            gap: 2rem;
+            padding-inline: 2.5rem;
+            padding-block: 3rem;
+        }
+    }
+
+    .wkf-text-reveal__aside {
+        display: flex;
+        width: 100%;
+        max-width: 250px;
+        flex-shrink: 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .wkf-text-reveal__subline {
+        font-size: clamp(14px, 4.5vw, 25px);
+    }
+
+    .wkf-text-reveal__content {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wkf-text-reveal__svg {
+        display: block;
+        height: auto;
+        width: 100%;
+        max-width: 1440px;
+    }
+
+    .wkf-text-reveal__footer {
+        margin-inline: auto;
+        display: flex;
+        width: 100%;
+        max-width: 1440px;
+        padding: 15px;
+        font-family: 'DM Mono', monospace;
+        font-size: 10px;
+    }
+
+    .wkf-text-reveal__footer-note {
+        margin-left: auto;
+        text-align: right;
+    }
+
+    .wkf-text-reveal__headline {
+        display: flex;
+        flex-direction: column;
+        font-size: clamp(24px, 7vw, 45px);
+
+        span {
+            display: block;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(110%);
+            transition:
+                transform 1.5s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 1.5s ease;
+
+            &.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}

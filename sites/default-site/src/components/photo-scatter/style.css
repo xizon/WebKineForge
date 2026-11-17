@@ -1,0 +1,177 @@
+.wkf-photo-scatter {
+    position: relative;
+    padding: clamp(72px, 10vh, 120px) clamp(20px, 4vw, 64px) 80px;
+    background:
+        radial-gradient(circle at 12% 20%, rgba(255, 77, 109, 0.08), transparent 28%),
+        #050505;
+    color: #f3efe6;
+
+    .wkf-photo-scatter__header {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(220px, 0.7fr) auto;
+        gap: 28px;
+        align-items: end;
+        margin-bottom: 36px;
+    }
+
+    .wkf-photo-scatter__title {
+        max-width: 10em;
+        margin: 0;
+        font-size: clamp(36px, 5vw, 68px);
+        font-weight: 500;
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+    }
+
+    .wkf-photo-scatter__lede {
+        max-width: 28ch;
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(243, 239, 230, 0.72);
+    }
+
+    .wkf-photo-scatter__mark {
+        width: 14px;
+        height: 14px;
+        margin-bottom: 8px;
+        border-top: 1px solid rgba(243, 239, 230, 0.7);
+        border-right: 1px solid rgba(243, 239, 230, 0.7);
+        animation: wkf-photo-scatter-jitter 3.8s steps(2, end) infinite;
+    }
+
+    .wkf-photo-scatter__board {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, minmax(48px, 6.4vh));
+        gap: 16px;
+    }
+
+    .wkf-photo-scatter__tile {
+        position: relative;
+        margin: 0;
+        overflow: hidden;
+        background: #141414;
+
+        & img,
+        .wkf-photo-scatter__field {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        & figcaption {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            left: 10px;
+            font-size: 10px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(243, 239, 230, 0.78);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(243, 239, 230, 0.16);
+            pointer-events: none;
+        }
+    }
+
+    .wkf-photo-scatter__tile--a {
+        grid-column: 1 / 6;
+        grid-row: 1 / 7;
+        margin-top: 4%;
+    }
+
+    .wkf-photo-scatter__tile--b {
+        grid-column: 6 / 9;
+        grid-row: 1 / 5;
+    }
+
+    .wkf-photo-scatter__tile--c {
+        grid-column: 9 / 13;
+        grid-row: 2 / 7;
+        margin-top: 8%;
+    }
+
+    .wkf-photo-scatter__tile--d {
+        grid-column: 4 / 8;
+        grid-row: 6 / 10;
+        margin-left: -2%;
+    }
+
+    .wkf-photo-scatter__tile--e {
+        grid-column: 1 / 4;
+        grid-row: 8 / 13;
+    }
+
+    .wkf-photo-scatter__tile--f {
+        grid-column: 8 / 13;
+        grid-row: 7 / 11;
+    }
+
+    .wkf-photo-scatter__tile--g {
+        grid-column: 5 / 8;
+        grid-row: 10 / 13;
+        margin-left: 6%;
+    }
+
+    @media (max-width: 760px) {
+        .wkf-photo-scatter__header {
+            grid-template-columns: 1fr;
+        }
+
+        .wkf-photo-scatter__board {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: none;
+            grid-auto-rows: 140px;
+        }
+
+        .wkf-photo-scatter__tile--a,
+        .wkf-photo-scatter__tile--b,
+        .wkf-photo-scatter__tile--c,
+        .wkf-photo-scatter__tile--d,
+        .wkf-photo-scatter__tile--e,
+        .wkf-photo-scatter__tile--f,
+        .wkf-photo-scatter__tile--g {
+            grid-column: auto;
+            grid-row: auto;
+            margin: 0;
+        }
+
+        .wkf-photo-scatter__tile--a,
+        .wkf-photo-scatter__tile--d,
+        .wkf-photo-scatter__tile--f {
+            grid-column: 1 / -1;
+            min-height: 210px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .wkf-photo-scatter__mark {
+            animation: none;
+        }
+    }
+}
+
+@keyframes wkf-photo-scatter-jitter {
+    0%, 84%, 100% {
+        transform: translate(0, 0);
+    }
+
+    88% {
+        transform: translate(2px, -2px);
+    }
+
+    92% {
+        transform: translate(-1px, 1px);
+    }
+
+    96% {
+        transform: translate(1px, 0);
+    }
+}

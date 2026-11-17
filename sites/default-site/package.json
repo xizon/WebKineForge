@@ -1,0 +1,19 @@
+{
+    "name": "default-site",
+    "private": true,
+    "version": "1.0.0",
+    "dependencies": {
+        "gsap": "^3.15.1",
+        "three": "^0.177.0"
+    },
+    "devDependencies": {
+        "@types/three": "^0.177.0"
+    },
+    "optionalDependencies": {
+        "animejs": "^4.0.2"
+    },
+    "build": {
+        "externals": {}
+    },
+    "x-build-externals-description": "To exclude dependencies from the bundle, add them to build.externals and specify their global variable names."
+}

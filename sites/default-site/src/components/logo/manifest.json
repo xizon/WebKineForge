@@ -1,0 +1,10 @@
+{
+    "name": "logo",
+    "version": "1.0.0",
+    "type": "component",
+    "description": "Brand mark with a theme option for light backgrounds.",
+    "dependencies": {
+        "gsap": "^3.15.1"
+    },
+    "assets": []
+}

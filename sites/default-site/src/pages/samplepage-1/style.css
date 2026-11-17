@@ -1,0 +1,23 @@
+
+.wkf-page-main {
+    overflow: clip;
+    background-color: #000;
+
+    .wkf-page-nav {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        margin: 0;
+        display: block;
+        width: 100vw;
+        padding: 1.25rem;
+        font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        font-size: 1.2rem;
+        /* tailwind gray-400 */
+        color: oklch(70.7% 0.022 261.325);
+        background-color: rgba(255, 255, 255, 0.05);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+    }
+}

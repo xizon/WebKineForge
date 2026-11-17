@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper.js";var t;function n(){t||=e()}document.readyState===`loading`?document.addEventListener(`DOMContentLoaded`,n,{once:!0}):n();

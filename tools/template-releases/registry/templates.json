@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-16T09:58:02.935Z",
+  "templates": [
+    {
+      "name": "default-site",
+      "description": "WebKineForge site template: default-site",
+      "downloadUrl": "https://github.com/xizon/webkineforge/releases/download/templates-latest/default-site.zip",
+      "checksum": "e2aca9ada300d2f77bc2ca739df203205fdfa56a5cc98b9962c026f6f07c0f10",
+      "size": 349494,
+      "updatedAt": "2026-11-16T09:58:02.935Z"
+    }
+  ]
+}

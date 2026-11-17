@@ -1,0 +1,248 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1160" viewBox="0 0 1440 1160">
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+        fill: #263244;
+      }
+      .title { font-size: 34px; font-weight: 700; }
+      .subtitle { font-size: 16px; fill: #778295; }
+      .heading { font-size: 21px; font-weight: 650; }
+      .body { font-size: 15px; fill: #536174; }
+      .body2 { font-size: 15px; fill: #32ba15; }
+      .small { font-size: 14px; fill: #788497; }
+
+      .box { fill: #fff; stroke: #cbd5e1; stroke-width: 1.8; }
+      .blue { fill: #eef4ff; stroke: #8aabe3; }
+      .core { fill: #f1f5fb; stroke: #9aabc3; }
+      .green { fill: #f1f8f3; stroke: #91b79c; }
+      .output { fill: #edf7f0; stroke: #80ad8d; }
+      .agent { fill: #f5f0ff; stroke: #aa91d4; }
+      .react { fill: #eff8ff; stroke: #80a9d0; }
+      .cli { fill: #eff6ff; stroke: #82a9d8; }
+
+      .arrow {
+        fill: none;
+        stroke: #8290a3;
+        stroke-width: 2.4;
+        marker-end: url(#arrow);
+      }
+      .agentArrow {
+        fill: none;
+        stroke: #9b83c5;
+        stroke-width: 2.2;
+        marker-end: url(#purpleArrow);
+      }
+      .optional {
+        fill: none;
+        stroke: #9b83c5;
+        stroke-width: 2;
+        stroke-dasharray: 6 5;
+        marker-end: url(#purpleArrow);
+      }
+      .cliTriggerArrow {
+        fill: none;
+        stroke: #6f98ce;
+        stroke-width: 2.2;
+        stroke-dasharray: 6 5;
+        marker-end: url(#cliArrowHead);
+      }
+      .cliLegendArrow {
+        fill: none;
+        stroke: #6f98ce;
+        stroke-width: 2.2;
+        marker-end: url(#cliArrowHead);
+      }
+      .reuse {
+        fill: none;
+        stroke: #75a482;
+        stroke-width: 2;
+        stroke-dasharray: 7 6;
+        marker-start: url(#greenArrow);
+        marker-end: url(#greenArrow);
+      }
+      .exportArrow {
+        fill: none;
+        stroke: #c49a52;
+        stroke-width: 2.4;
+        marker-end: url(#exportArrowHead);
+      }
+    </style>
+
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#8290a3"/>
+    </marker>
+
+    <marker id="greenArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#75a482"/>
+    </marker>
+
+    <marker id="purpleArrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#9b83c5"/>
+    </marker>
+
+    <marker id="cliArrowHead" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#6f98ce"/>
+    </marker>
+
+    <marker id="exportArrowHead" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#c49a52"/>
+    </marker>
+  </defs>
+
+  <rect width="1440" height="1160" fill="#f8fafc"/>
+
+  <!-- Header -->
+  <text x="720" y="65" text-anchor="middle" class="title">WebKineForge Workflow</text>
+  <text x="720" y="98" text-anchor="middle" class="subtitle">Framework-Free · Vanilla Development · AI Agent · Multi-Static Site Management &amp; Delivery</text>
+
+  <!-- Main workflow -->
+  <rect x="50" y="145" width="150" height="112" rx="13" class="box blue"/>
+  <text x="125" y="190" text-anchor="middle" class="heading">Developer</text>
+  <text x="125" y="222" text-anchor="middle" class="body">Focused on web UI</text>
+
+  <path d="M200 201 H240" class="arrow"/>
+
+  <rect x="240" y="145" width="200" height="112" rx="13" class="box core"/>
+  <text x="340" y="180" text-anchor="middle" class="heading">Service Discovery</text>
+  <text x="340" y="202" text-anchor="middle" class="body">· Site+Controller Auto-Mount</text>
+  <text x="325" y="222" text-anchor="middle" class="body">· Auto-Discovered Cmps</text>
+  <text x="309" y="242" text-anchor="middle" class="body">· Previewable Cmps</text>
+
+
+  <path d="M440 201 H480" class="arrow"/>
+
+  <rect x="480" y="145" width="180" height="112" rx="13" class="box core"/>
+  <text x="570" y="190" text-anchor="middle" class="heading">Core Engine</text>
+  <text x="540" y="222" text-anchor="middle" class="body">· Rendering</text>
+  <text x="570" y="242" text-anchor="middle" class="body">· Cross-Site Imports</text>
+
+  <path d="M660 201 H700" class="arrow"/>
+
+  <rect x="700" y="145" width="260" height="112" rx="13" class="box core"/>
+  <text x="830" y="190" text-anchor="middle" class="heading">Dependency Adapter</text>
+  <text x="830" y="222" text-anchor="middle" class="body">Bundling · Global Mapping</text>
+
+  <path d="M960 201 H1000" class="arrow"/>
+
+  <rect x="1000" y="145" width="390" height="112" rx="13" class="box blue"/>
+  <text x="1195" y="190" text-anchor="middle" class="heading">Build &amp; Rendering</text>
+  <text x="1195" y="222" text-anchor="middle" class="body">HTML Generation · Static Asset Processing</text>
+   
+
+  <!-- Developer to CLI -->
+  <path d="M125 257 V270 H25 V375 H80" class="cliTriggerArrow"/>
+
+  <!-- CLI workflow -->
+  <rect x="80" y="295" width="1280" height="190" rx="17" fill="#f2f7ff" stroke="#9db8df" stroke-width="1.8"/>
+  <text x="720" y="333" text-anchor="middle" class="heading">CLI Quick Workflow</text>
+  <text x="720" y="360" text-anchor="middle" class="body">One-click initialization · Generate files in the target Site</text>
+
+  <rect x="155" y="385" width="300" height="75" rx="11" class="box cli"/>
+  <text x="305" y="431" text-anchor="middle" class="heading">Create Site</text>
+
+  <rect x="570" y="385" width="300" height="75" rx="11" class="box cli"/>
+  <text x="720" y="431" text-anchor="middle" class="heading">Generate Component</text>
+
+  <rect x="985" y="385" width="300" height="75" rx="11" class="box cli"/>
+  <text x="1135" y="431" text-anchor="middle" class="heading">Generate Page</text>
+
+  <!-- AI Agent collaboration -->
+  <rect x="80" y="515" width="1280" height="85" rx="17" class="box agent"/>
+  <text x="230" y="550" text-anchor="middle" class="heading">AI Agent Collaboration</text>
+  <text x="760" y="550" text-anchor="middle" class="body">Each Agent works within a single Site</text>
+
+  <!-- Developer to Agent -->
+  <path d="M125 257 V280 H45 V557 H80" class="optional"/>
+
+  <!-- Agent to Site source -->
+  <path d="M1045 600 V630" class="agentArrow"/>
+  <text x="1065" y="620" class="small">Create or Modify Source</text>
+
+  <!-- Multi-Site source management -->
+  <rect x="80" y="630" width="1280" height="215" rx="18" fill="#fff" stroke="#d6dee8" stroke-width="1.8"/>
+  <text x="290" y="670" text-anchor="middle" class="heading">Multi-Site Source Management</text>
+  <text x="145" y="697" class="small">Each Site independently manages its configuration, pages, components, and static assets, with optional cross-Site reuse</text>
+
+  <rect x="145" y="725" width="300" height="90" rx="12" class="box green"/>
+  <text x="295" y="760" text-anchor="middle" class="heading">Site A</text>
+  <text x="295" y="790" text-anchor="middle" class="body">Config / Pages / Components / Assets</text>
+
+  <rect x="570" y="725" width="300" height="90" rx="12" class="box green"/>
+  <text x="720" y="760" text-anchor="middle" class="heading">Site B</text>
+  <text x="720" y="790" text-anchor="middle" class="body">Config / Pages / Components / Assets</text>
+
+  <rect x="995" y="725" width="300" height="90" rx="12" class="box green"/>
+  <text x="1145" y="780" text-anchor="middle" class="heading">More Sites</text>
+
+  <!-- Cross-Site reuse -->
+  <path d="M445 770 H570" class="reuse"/>
+  <path d="M870 770 H995" class="reuse"/>
+
+  <!-- Site source to loader -->
+  <path d="M340 630 V262" class="arrow"/>
+  <text x="355" y="620" class="small">Provide Source</text>
+
+  <!-- Build output -->
+  <path d="M1195 257 V880 H720 V900" class="arrow"/>
+
+  <rect x="520" y="900" width="600" height="120" rx="15" class="box output"/>
+  <text x="820" y="946" text-anchor="middle" class="heading">Standalone Build Output (dist)</text>
+  <text x="820" y="980" text-anchor="middle" class="body">Maintainable HTML + Static Assets</text>
+  <text x="820" y="1000" text-anchor="middle" class="body2">Automatic Distribution + Get published HTML website templates with npx command..</text>
+
+  <path d="M1120 960 H1170" class="arrow"/>
+
+  <rect x="1175" y="900" width="215" height="120" rx="15" class="box output"/>
+  <text x="1282" y="946" text-anchor="middle" class="heading">Deploy &amp; Deliver</text>
+  <text x="1282" y="980" text-anchor="middle" class="body"> · Further Customization</text>
+  <text x="1282" y="1000" text-anchor="middle" class="body"> · Tech Stack Integration</text>
+  
+
+  <!-- React component library export -->
+  <path d="M145 845 V900" class="exportArrow"/>
+
+  <rect x="80" y="900" width="420" height="120" rx="15" class="box react"/>
+  <text x="280" y="946" text-anchor="middle" class="heading">Supports React Component Export</text>
+  <text x="280" y="980" text-anchor="middle" class="body">One-Click Export · Standalone</text>
+
+
+
+  <!-- CLI connection: draw LAST so the arrow cannot be covered by the Site container -->
+  <path d="M1360 390 H1400 V680 H1376"
+        fill="none"
+        stroke="#6f98ce"
+        stroke-width="2.5"
+        stroke-linejoin="round"/>
+
+  <!-- Explicit left-pointing arrowhead -->
+  <path d="M1376 671 L1357 680 L1376 689 Z"
+        fill="#6f98ce"
+        stroke="#6f98ce"
+        stroke-width="1"/>
+
+  <!-- Legend -->
+  <path d="M70 1070 H115" class="reuse"/>
+  <text x="130" y="1075" class="small">Cross-Site Resource Reuse</text>
+
+  <path d="M330 1070 H375" class="optional"/>
+  <text x="390" y="1075" class="small">AI Agent Collaboration</text>
+
+  <path d="M570 1070 H615" class="cliTriggerArrow"/>
+  <text x="630" y="1075" class="small">Developer Triggers CLI</text>
+
+  <path d="M830 1070 H875" class="cliLegendArrow"/>
+  <text x="890" y="1075" class="small">CLI Generates Source</text>
+
+  <path d="M1090 1070 H1135" class="exportArrow"/>
+  <text x="1150" y="1075" class="small">React Component Export</text>
+
+    <!-- Agent invokes built-in CLI -->
+    <path d="M1300 515 V495 V485" class="agentArrow" transform="translate(-570 0)"/>
+
+    <text x="520" y="505" class="small">
+    Invoke built-in CLI commands
+    </text>
+
+</svg>

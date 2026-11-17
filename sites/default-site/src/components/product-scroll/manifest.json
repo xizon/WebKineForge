@@ -1,0 +1,10 @@
+{
+    "name": "product-scroll",
+    "version": "1.0.0",
+    "type": "component",
+    "description": "Scroll-driven product storytelling section",
+    "dependencies": {
+        "gsap": "^3.15.1"
+    },
+    "assets": []
+}

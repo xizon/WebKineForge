@@ -1,0 +1,8 @@
+{
+    "name": "sample-page-2-main",
+    "version": "1.0.0",
+    "type": "component",
+    "description": "Empty placeholder component for sample page 2.",
+    "dependencies": {},
+    "assets": []
+}

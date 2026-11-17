@@ -1,0 +1,50 @@
+{
+    "name": "webkineforge",
+    "version": "1.0.0",
+    "type": "module",
+    "engines": {
+        "node": ">=22.12.0"
+    },
+    "workspaces": [
+        "sites/*"
+    ],
+    "scripts": {
+        "test:core": "vitest run --config vitest.config.ts",
+        "dev": "tsx core/cli/index.ts dev",
+        "build": "tsx core/cli/index.ts build",
+        "preview": "tsx core/cli/index.ts preview",
+        "export:react": "tsx core/cli/index.ts export:react",
+        "typecheck": "tsc --noEmit",
+        "prefix:tailwind": "tsx core/auto-cli/security/prefix-tailwind.ts",
+        "create:component": "tsx core/auto-cli/create/component.ts",
+        "create:page": "tsx core/auto-cli/create/page.ts",
+        "create:site": "tsx core/auto-cli/create/site.ts",
+        "tmpl:build": "tsx tools/template-releases/scripts/build.ts",
+        "tmpl:publish": "tsx tools/template-releases/scripts/publish.ts"
+    },
+    "devDependencies": {
+        "@prettier/sync": "^0.6.1",
+        "@tailwindcss/vite": "^4.3.5",
+        "@types/adm-zip": "^0.5.8",
+        "@types/node": "^22.20.5",
+        "@types/three": "^0.177.0",
+        "adm-zip": "^0.6.1",
+        "cssnano": "^8.0.10",
+        "cssnano-preset-lite": "^5.0.6",
+        "happy-dom": "^21.0.4",
+        "magic-string": "^1.4.5",
+        "oxc-parser": "^0.158.0",
+        "postcss-nesting": "^14.0.3",
+        "preact": "^11.1.1",
+        "preact-render-to-string": "^6.8.2",
+        "prettier": "^3.9.10",
+        "remark-gfm": "^4.0.1",
+        "remark-parse": "^11.0.0",
+        "tailwindcss": "^4.3.5",
+        "tsx": "^4.23.15",
+        "typescript": "^7.0.2",
+        "unified": "^11.0.5",
+        "vite": "^8.3.5",
+        "vitest": "^5.1.0"
+    }
+}

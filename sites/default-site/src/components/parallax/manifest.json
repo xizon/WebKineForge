@@ -1,0 +1,10 @@
+{
+    "name": "parallax",
+    "version": "1.0.0",
+    "type": "component",
+    "description": "Scroll-based parallax image experience",
+    "dependencies": {},
+    "assets": [
+        "./assets/images/parallax-bg.jpg"
+    ]
+}

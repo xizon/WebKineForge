@@ -1,0 +1,10 @@
+{
+    "name": "scenes",
+    "version": "1.0.0",
+    "type": "component",
+    "description": "Scroll cover between SceneItem children, at least half a viewport",
+    "dependencies": {
+        "gsap": "^3.15.1"
+    },
+    "assets": []
+}

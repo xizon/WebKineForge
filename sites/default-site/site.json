@@ -1,0 +1,23 @@
+{
+    "name": "default-site",
+    "version": "1.0.0",
+    "lang": "en-US",
+    "title": "Default Site",
+    "description": "Your description.",
+    "author": {
+        "name": "UIUX Lab",
+        "website": "https://uiux.cc",
+        "email": "uiuxlab@gmail.com"
+    },
+    "template": "./site.html",
+    "paths": {
+        "src": "./src",
+        "public": "./public",
+        "dist": "./dist"
+    },
+    "entries": {
+        "pages": "./src/pages",
+        "components": "./src/components",
+        "styles": "./src/styles"
+    }
+}

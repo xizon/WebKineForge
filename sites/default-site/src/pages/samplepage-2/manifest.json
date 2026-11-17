@@ -1,0 +1,14 @@
+{
+    "name": "samplepage-2",
+    "version": "1.0.0",
+    "type": "page",
+    "output": "samplepage-2.html",
+    "bodyClass": "wkf-page wkf-samplepage wkf-samplepage-light",
+    "seo": {
+        "lang": "en-US",
+        "title": "Sample Page 2",
+        "description": "Sample page 2.",
+        "keywords": [],
+        "canonical": ""
+    }
+}

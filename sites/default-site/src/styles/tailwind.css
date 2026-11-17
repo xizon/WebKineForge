@@ -1,0 +1,13 @@
+@import "tailwindcss" prefix(wkf);
+
+
+@layer base {
+    body {
+        background-color: #111111;
+        font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+    }
+
+    body.wkf-samplepage-light {
+        background-color: #fff;
+    }
+}

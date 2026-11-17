@@ -1,0 +1,8 @@
+{
+    "name": "text-shimmer",
+    "version": "1.0.0",
+    "type": "component",
+    "description": "Inline wrapper that applies an animated shimmer to its child text.",
+    "dependencies": {},
+    "assets": []
+}

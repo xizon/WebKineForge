@@ -1,0 +1,8 @@
+{
+    "name": "pricing-cards",
+    "version": "1.0.0",
+    "type": "component",
+    "description": "Three-column pricing cards that enter in sequence when the grid reaches the viewport",
+    "dependencies": {},
+    "assets": []
+}

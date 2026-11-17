@@ -1,0 +1,19 @@
+{
+    "name": "samplepage-3--home",
+    "version": "1.0.0",
+    "type": "page",
+    "output": "samplepage-3--home.html",
+    "bodyClass": "wkf-page wkf-samplepage wkf-samplepage--home",
+    "seo": {
+        "lang": "en-US",
+        "title": "Sample Page 3 (Home)",
+        "description": "Sample page 3 (Home).",
+        "keywords": [],
+        "canonical": ""
+    },
+    "entry": {
+        "template": "./index.tsx",
+        "client": "./index.tsx",
+        "styles": "./style.css"
+    }
+}
