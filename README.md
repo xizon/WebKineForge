@@ -16,6 +16,8 @@
 </p>
 
 
+
+
 **A web creation toolkit for developers. Build interactive websites with clean, maintainable HTML and built-in AI Agent support.**
 
 One `npx` command downloads the HTML website template of any published WebKineForge Site — ready to run locally, customize, integrate, and deploy.
@@ -24,6 +26,18 @@ One `npx` command downloads the HTML website template of any published WebKineFo
 npx webkineforge list
 npx webkineforge add default-site
 ```
+
+# WebKineForge — Is It Right for You?
+
+
+| Your Need | Recommended Tool | Core Feature | Runtime JS | Interaction Model |
+|-----------|------------------|--------------|------------|-------------------|
+| Immersive scroll storytelling, 3D, landing pages, free interaction of single-page or multi-page | ✅ **WebKineForge** | No framework overhead, AI-Agent, static HTML | vanilla only | Auto-mount, direct DOM manipulation |
+| CContent sites, blogs, docs, SEO-first pages with component-island interactions | → **[Astro](https://astro.build)** | HTML-first Islands, zero JS by default | Islands (on demand) | Component islands, cross-island store |
+| Full-stack web apps, SaaS dashboards, real-time, software | → **[Next.js](https://nextjs.org)** / **[Nuxt](https://nuxt.com)** | Full-stack React/Vue, SSR/SSG/ISR | React/Vue bundle | SPA / Hybrid |
+| Visual drag-and-drop, no-code publishing | → **[Framer](https://framer.com)** / **[Webflow](https://webflow.com)** | Visual canvas, low-code | Platform-hosted | Visual + code |
+| Simple blogs, docs, minimal demos | → **[11ty](https://www.11ty.dev)** / Vanilla | Lightweight SSG, zero config | Minimal / none | Manual |
+
 
 ## Introduction
 
@@ -96,12 +110,11 @@ A *Project* can contain multiple *Sites*. Each *Site* builds independently into 
 - [10. Custom HTML Template](./docs/en/custom-html-template.md)
 - [11. Cross-Site Resource Reuse](./docs/en/cross-site-reuse.md)
 - [12. React Integration](./docs/en/react-integration.md)
-- [13. Comparison with Other Tools](#13-comparison-with-other-tools)
-- [14. Browser & Device Support](#14-browser--device-support)
-- [15. Contributing](#15-contributing)
-- [16. Development Environment](#16-development-environment)
-- [17. Support & Acknowledgements](#17-support--acknowledgements)
-- [18. License](#18-license)
+- [13. Browser & Device Support](#13-browser--device-support)
+- [14. Contributing](#14-contributing)
+- [15. Development Environment](#15-development-environment)
+- [16. Support & Acknowledgements](#16-support--acknowledgements)
+- [17. License](#17-license)
 
 
 ## 1. Quick Start
@@ -217,24 +230,10 @@ WebKineForge/
 ## [12. React Integration](./docs/en/react-integration.md)
 
 
-## 13. Comparison with Other Tools
 
-| Tool | Best for | Key features |
-| :--- | :--- | :--- |
-| **WebKineForge** | Immersive scroll storytelling, 3D interaction, digital marketing showrooms, marketing landing pages | Framework-free, component-based, native interaction, maintainable static HTML output, AI Agent collaboration |
-| **Vanilla (HTML/CSS/JS)** | Minimal single pages, throwaway demos | Zero configuration; lacks directory conventions and reuse mechanisms at scale |
-| **Astro** | Content sites, blogs, documentation, SEO-first sites | HTML-first Islands architecture; ships zero client JS by default |
-| **11ty** | Simple static blogs or documentation | Lightweight static site generator with flexible templating |
-| **Next.js** | Web apps, SaaS products, dynamic applications | Full-stack React framework with SSR/SSG capabilities |
-| **Framer / Webflow** | Marketing landing pages, visual site building | Visual canvas and low-code publishing with limited code customization |
-| **Figma** | UI interface design, prototyping, and team design collaboration | A tool for the design phase, used for establishing visual standards and reviewing high-fidelity prototypes; it can be integrated with other coding tools to facilitate final implementation. |
+## 13. Browser & Device Support
 
-> The above is provided solely as a reference for tool selection. Please consult the official documentation.
-
-
-## 14. Browser & Device Support
-
-### 14.1 Desktop Browsers
+### 13.1 Desktop Browsers
 
 | Browser | Minimum version |
 | ----- | ----- |
@@ -244,7 +243,7 @@ WebKineForge/
 | **Mozilla Firefox** | **v117+** |
 | **Internet Explorer** | ❌ **Not supported** |
 
-### 14.2 Mobile OS & Devices
+### 13.2 Mobile OS & Devices
 
 | OS / Device | Browser / Engine | Minimum supported OS version |
 | ----- | ----- | ----- |
@@ -252,11 +251,11 @@ WebKineForge/
 | **Android phones / tablets** | **Chrome for Android** | **Android 10+** |
 
 
-## 15. Contributing
+## 14. Contributing
 
 We welcome developers to contribute to WebKineForge by sharing their creations, reporting issues, suggesting improvements, and enhancing documentation.
 
-### 15.1 Share Your Creations
+### 14.1 Share Your Creations
 
 We welcome Sites created and shared by the community!
 
@@ -264,7 +263,7 @@ If you would like to contribute your own creation to WebKineForge, you can submi
 
 Please follow the contribution workflow below.
 
-### 15.2 Report Issues & Suggestions
+### 14.2 Report Issues & Suggestions
 
 If you encounter any problems or have ideas and suggestions, feel free to reach out through GitHub Issues.
 
@@ -272,7 +271,7 @@ If you encounter any problems or have ideas and suggestions, feel free to reach 
 - **Feature Requests**: Suggest new features or improvements.
 - **Other Feedback**: Share your experience, observations, or any other valuable ideas.
 
-### 15.3 Contribution Workflow
+### 14.3 Contribution Workflow
 
 1. Fork and clone the repository.
 2. Install dependencies: `npm install`
@@ -280,7 +279,7 @@ If you encounter any problems or have ideas and suggestions, feel free to reach 
 4. Test your changes locally to ensure everything works as expected.
 5. Submit a Pull Request with a clear description of the changes and their purpose.
 
-### 15.4 PR Checklist
+### 14.4 PR Checklist
 
 **General Checklist (Applies to All PRs)**
 
@@ -299,7 +298,7 @@ If you encounter any problems or have ideas and suggestions, feel free to reach 
 - [ ] Generated files (`dist/`, `index.json` files, `tsconfig.json`) are excluded.
 
 
-## 16. Development Environment
+## 15. Development Environment
 
 - [Tailwind CSS](https://tailwindcss.com/) **4.x.x+**
 - [Vite](https://vite.dev/) **8.x.x+**
@@ -307,7 +306,7 @@ If you encounter any problems or have ideas and suggestions, feel free to reach 
 - [Preact](https://preactjs.com/) **11.x.x+**
 
 
-## 17. Support & Acknowledgements
+## 16. Support & Acknowledgements
 
 WebKineForge is an open-source project dedicated to bringing an engineering-driven approach to the development of purely static, creative, and interactive websites. It aims to make website template creation, customization, reuse, sharing, and delivery simpler and more efficient — bringing static website development back to the joy of creation.
 
@@ -318,6 +317,6 @@ If you find this project useful, your support will be a great motivation for us 
 Thank you!
 
 
-## 18. License
+## 17. License
 
 Licensed under the [MIT License](https://opensource.org/licenses/MIT).

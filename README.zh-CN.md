@@ -25,6 +25,20 @@ npx webkineforge list
 npx webkineforge add default-site
 ```
 
+---
+
+## WebKineForge 适合你吗？
+
+| 你的需求 | 推荐工具 | 核心特性 | 运行时 JS | 交互模型 |
+|-----------|-----------|---------|-----------|---------|
+| 沉浸式滚动叙事、3D、落地页、单页或多页自由交互 | ✅ **WebKineForge** | 无框架负担、AI Agent 原生、静态 HTML | 仅 vanilla | 自动挂载，直接操作 DOM |
+| 内容站、博客、文档、SEO 优先页面、交互以独立组件为主的页面 | → **[Astro](https://astro.build)** | HTML-first Islands，默认零 JS | Islands（按需） | 组件岛，跨岛 store |
+| 全栈 Web 应用、SaaS 后台、实时功能、软件应用 | → **[Next.js](https://nextjs.org)** / **[Nuxt](https://nuxt.com)** | 全栈 React/Vue，SSR/SSG/ISR | React/Vue bundle | SPA / 混合 |
+| 可视化拖拽、无代码发布 | → **[Framer](https://framer.com)** / **[Webflow](https://webflow.com)** | 可视化画布，低代码 | 平台托管 | 可视化 + 代码 |
+| 简单博客、文档、极简 Demo | → **[11ty](https://www.11ty.dev)** / Vanilla 原生 | 轻量 SSG，零配置 | 极少 / 无 | 手动 |
+
+
+---
 
 ## 简介
 
@@ -96,12 +110,11 @@ npx webkineforge add default-site
 - [10. 自定义 HTML 页面模板](./docs/zh-CN/custom-html-template.md)
 - [11. 跨 Site 资源复用](./docs/zh-CN/cross-site-reuse.md)
 - [12. 在 React 项目中使用组件](./docs/zh-CN/react-integration.md)
-- [13. 工具选型参考](#13-工具选型参考)
-- [14. 浏览器与设备兼容性](#14-浏览器与设备兼容性)
-- [15. 参与贡献](#15-参与贡献)
-- [16. 开发环境](#16-开发环境)
-- [17. 支持与感谢](#17-支持与感谢)
-- [18. 许可证](#18-许可证)
+- [13. 浏览器与设备兼容性](#13-浏览器与设备兼容性)
+- [14. 参与贡献](#14-参与贡献)
+- [15. 开发环境](#15-开发环境)
+- [16. 支持与感谢](#16-支持与感谢)
+- [17. 许可证](#17-许可证)
 
 ## 1. 快速开始
 
@@ -214,26 +227,10 @@ WebKineForge/
 ## [12. 在 React 项目中使用组件](./docs/zh-CN/react-integration.md)
 
 
-## 13. 工具选型参考
 
-WebKineForge 并不是 Astro、Next.js 或可视化建站平台的替代品，不同工具适用于不同场景。
+## 13. 浏览器与设备兼容性
 
-| 工具 | 更适合的场景 | 主要特点 |
-| :--- | :--- | :--- |
-| **WebKineForge** | 沉浸式滚动叙事、3D 交互、数字营销展厅、营销落地页、品牌展示 | 无框架，组件化，原生交互，输出可读的静态 HTML，支持 AI Agent 协作 |
-| **纯手写 (HTML/CSS/JS)** | 极简单页、临时演示 Demo、无任何工具链依赖 | 零配置；但页面和组件增多后缺乏目录规范、复用机制和样式隔离。 |
-| **Astro** | 内容网站、博客、文档站、SEO 优先的资讯类网站 | HTML 优先的 Islands 架构，默认不向客户端发送 JS，可按需使用各前端框架组件。 |
-| **11ty (Eleventy)** | 简单、轻量的纯静态博客或文档站 | 极简静态站点生成器，模板引擎灵活，不绑定前端框架。 |
-| **Next.js** | 复杂 Web 应用、SaaS 产品、全栈业务系统、动态数据网站 | 基于React，提供 SSR/SSG、API 路由、Server Actions 等完整全栈能力 |
-| **Framer / Webflow** | 营销落地页、品牌展示、可视化建站 | 可视化画布与低代码发布，对非程序员友好，但代码二次开发与版本控制受限。 |
-| **Figma** | UI 界面设计、原型设计、团队设计协作 | 属于设计阶段的产物，用于视觉规范与高保真原型评审，可与其他代码工具配合完成高阶落地。 |
-
-> 以上仅作为工具选型参考，请以官方文档为准。
-
-
-## 14. 浏览器与设备兼容性
-
-### 14.1 桌面端浏览器
+### 13.1 桌面端浏览器
 
 | 浏览器 | 最低版本 |
 | ----- | ----- |
@@ -243,7 +240,7 @@ WebKineForge 并不是 Astro、Next.js 或可视化建站平台的替代品，�
 | **Mozilla Firefox** | **v117+** |
 | **Internet Explorer** | ❌ **Not supported** |
 
-### 14.2 移动操作系统与设备
+### 13.2 移动操作系统与设备
 
 | 操作系统/设备 | 浏览器 | 最低 OS 版本 |
 | ----- | ----- | ----- |
@@ -251,11 +248,11 @@ WebKineForge 并不是 Astro、Next.js 或可视化建站平台的替代品，�
 | **Android phones / tablets** | **Chrome for Android** | **Android 10+** |
 
 
-## 15. 参与贡献
+## 14. 参与贡献
 
 我们欢迎开发者通过分享创作、报告问题、提出建议和完善文档等方式参与 WebKineForge 的建设。
 
-### 15.1 分享你的创作
+### 14.1 分享你的创作
 
 我们欢迎社区开发者创建并分享自己的 Site！
 
@@ -263,7 +260,7 @@ WebKineForge 并不是 Astro、Next.js 或可视化建站平台的替代品，�
 
 请按照下方的贡献工作流进行操作。
 
-### 15.2 报告问题与提出建议
+### 14.2 报告问题与提出建议
 
 如果你在使用过程中遇到问题，或者对项目有任何想法和建议，欢迎通过 GitHub Issues 与我们交流。
 
@@ -271,7 +268,7 @@ WebKineForge 并不是 Astro、Next.js 或可视化建站平台的替代品，�
 - **功能建议**：提出你希望增加的功能或改进方向。
 - **其他反馈**：分享使用体验、发现的问题或任何有价值的想法。
 
-### 15.3 贡献工作流
+### 14.3 贡献工作流
 
 1. Fork 并 Clone 项目仓库。
 2. 安装依赖：`npm install`
@@ -279,7 +276,7 @@ WebKineForge 并不是 Astro、Next.js 或可视化建站平台的替代品，�
 4. 在本地进行测试，确保修改符合预期。
 5. 提交 Pull Request，并清晰描述本次修改的内容和目的。
 
-### 15.4 PR 检查清单
+### 14.4 PR 检查清单
 
 **通用检查清单（适用于所有 PR）**
 
@@ -298,7 +295,7 @@ WebKineForge 并不是 Astro、Next.js 或可视化建站平台的替代品，�
 - [ ] 不提交生成文件（`dist/`、`index.json` 文件、`tsconfig.json`）。
 
 
-## 16. 开发环境
+## 15. 开发环境
 
 - [Tailwind CSS](https://tailwindcss.com/) **4.x.x+**
 - [Vite](https://vite.dev/) **8.x.x+**
@@ -306,7 +303,7 @@ WebKineForge 并不是 Astro、Next.js 或可视化建站平台的替代品，�
 - [Preact](https://preactjs.com/) **11.x.x+**
 
 
-## 17. 支持与感谢
+## 16. 支持与感谢
 
 WebKineForge 是一个开源项目，致力于将纯静态创意交互网站的开发流程工程化，让网站模板的创建、定制、复用、分享与交付变得更加简单高效，让静态网站开发回归创作本身。
 
@@ -318,7 +315,7 @@ WebKineForge 是一个开源项目，致力于将纯静态创意交互网站的�
 
 **感谢你对 WebKineForge 的关注与支持！**
 
-## 18. 许可证
+## 17. 许可证
 
 Licensed under the [MIT](https://opensource.org/licenses/MIT).
 
