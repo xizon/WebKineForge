@@ -30,13 +30,16 @@ npx webkineforge add default-site
 # ☀️ Is It Right for You?
 
 
-| Your Need | Recommended Tool | Core Feature | Runtime | Interaction Model |
-|-----------|------------------|--------------|------------|-------------------|
-| Immersive scroll storytelling, 3D, landing pages, free interaction of single-page or multi-page | **WebKineForge** | No framework overhead, AI-Agent, static HTML | vanilla only | Auto-mount, direct DOM manipulation |
-| CContent sites, blogs, docs, SEO-first pages with component-island interactions | → **[Astro](https://astro.build)** | HTML-first Islands, zero JS by default | Islands (on demand) | Component islands, cross-island store |
-| Full-stack web apps, SaaS dashboards, real-time, software | → **[Next.js](https://nextjs.org)** / **[Nuxt](https://nuxt.com)** | Full-stack React/Vue, SSR/SSG/ISR | React/Vue bundle | SPA / Hybrid |
-| Visual drag-and-drop, no-code publishing | → **[Framer](https://framer.com)** / **[Webflow](https://webflow.com)** | Visual canvas, low-code | Platform-hosted | Visual + code |
-| Simple blogs, docs, minimal demos | → **[11ty](https://www.11ty.dev)** / Vanilla | Lightweight SSG, zero config | Minimal / none | Manual |
+| Your Need | Recommended Tool | Core Feature | Runtime | Interaction Model | Deployment / Integration |
+|-----------|------------------|--------------|------------|-------------------|--------------------------|
+| Static HTML temmplate, 3D, free interaction of single-page or multi-page | **WebKineForge** | No framework overhead, AI-Agent, static HTML | vanilla only | Auto-mount, direct DOM manipulation | Static hosting; drop into Next, WordPress, etc. |
+| Content-first sites, pages with component-island interactions | **[Astro](https://astro.build)** | HTML-first Islands, zero JS by default | Islands (on demand) | Component islands, cross-island store | Static, Node, or Vercel / Netlify / Cloudflare |
+| Full-stack web apps, SaaS、dashboards, real-time, software | **[Next.js](https://nextjs.org)** / **[Nuxt](https://nuxt.com)** | Full-stack React/Vue, SSR/SSG/ISR | React/Vue bundle | SPA / Hybrid | Static export, self-hosted, or Vercel / Nitro |
+| Visual drag-and-drop, no-code publishing | **[Framer](https://framer.com)** / **[Webflow](https://webflow.com)** | Visual canvas, low-code | Platform-hosted | Visual + code | Built-in platform features |
+| Simple blogs, docs, minimal demos | **[11ty](https://www.11ty.dev)** / Vanilla | Lightweight SSG, zero config | Minimal / none | Manual | Same as WebKineForge |
+
+
+
 
 
 ## Introduction
