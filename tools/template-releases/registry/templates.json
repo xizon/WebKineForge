@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-16T09:58:02.935Z",
+  "updatedAt": "2026-11-17T15:51:53.360Z",
   "templates": [
     {
       "name": "default-site",
       "description": "WebKineForge site template: default-site",
       "downloadUrl": "https://github.com/xizon/webkineforge/releases/download/templates-latest/default-site.zip",
-      "checksum": "e2aca9ada300d2f77bc2ca739df203205fdfa56a5cc98b9962c026f6f07c0f10",
-      "size": 349494,
-      "updatedAt": "2026-11-16T09:58:02.935Z"
+      "checksum": "2a6a75b43fe29b917b4ea647020bce3fc995f2975d074c6d18aa64b78ccd739d",
+      "size": 381217,
+      "updatedAt": "2026-11-17T15:51:53.360Z"
     }
   ]
 }
