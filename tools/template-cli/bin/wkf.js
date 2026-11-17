@@ -18,7 +18,7 @@ const colors = {
 };
 
 const REGISTRY_URL =
-    "https://raw.githubusercontent.com/xizon/webkineforge/main/tools/template-releases/registry/templates.json";
+    "https://xizon.github.io/WebKineForge/tools/template-releases/registry/templates.json";
 
 function printHelp() {
     console.log(`
