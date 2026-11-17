@@ -27,12 +27,12 @@ npx webkineforge list
 npx webkineforge add default-site
 ```
 
-# WebKineForge — Is It Right for You?
+# ☀️ Is It Right for You?
 
 
-| Your Need | Recommended Tool | Core Feature | Runtime JS | Interaction Model |
+| Your Need | Recommended Tool | Core Feature | Runtime | Interaction Model |
 |-----------|------------------|--------------|------------|-------------------|
-| Immersive scroll storytelling, 3D, landing pages, free interaction of single-page or multi-page | ✅ **WebKineForge** | No framework overhead, AI-Agent, static HTML | vanilla only | Auto-mount, direct DOM manipulation |
+| Immersive scroll storytelling, 3D, landing pages, free interaction of single-page or multi-page | **WebKineForge** | No framework overhead, AI-Agent, static HTML | vanilla only | Auto-mount, direct DOM manipulation |
 | CContent sites, blogs, docs, SEO-first pages with component-island interactions | → **[Astro](https://astro.build)** | HTML-first Islands, zero JS by default | Islands (on demand) | Component islands, cross-island store |
 | Full-stack web apps, SaaS dashboards, real-time, software | → **[Next.js](https://nextjs.org)** / **[Nuxt](https://nuxt.com)** | Full-stack React/Vue, SSR/SSG/ISR | React/Vue bundle | SPA / Hybrid |
 | Visual drag-and-drop, no-code publishing | → **[Framer](https://framer.com)** / **[Webflow](https://webflow.com)** | Visual canvas, low-code | Platform-hosted | Visual + code |

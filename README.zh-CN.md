@@ -27,11 +27,11 @@ npx webkineforge add default-site
 
 ---
 
-## WebKineForge 适合你吗？
+## ☀️ 它适合你吗？
 
-| 你的需求 | 推荐工具 | 核心特性 | 运行时 JS | 交互模型 |
+| 你的需求 | 推荐工具 | 核心特性 | 运行时 | 交互模型 |
 |-----------|-----------|---------|-----------|---------|
-| 沉浸式滚动叙事、3D、落地页、单页或多页自由交互 | ✅ **WebKineForge** | 无框架负担、AI Agent 原生、静态 HTML | 仅 vanilla | 自动挂载，直接操作 DOM |
+| 沉浸式滚动叙事、3D、落地页、单页或多页自由交互 | **WebKineForge** | 无框架负担、AI Agent 原生、静态 HTML | 仅 vanilla | 自动挂载，直接操作 DOM |
 | 内容站、博客、文档、SEO 优先页面、交互以独立组件为主的页面 | → **[Astro](https://astro.build)** | HTML-first Islands，默认零 JS | Islands（按需） | 组件岛，跨岛 store |
 | 全栈 Web 应用、SaaS 后台、实时功能、软件应用 | → **[Next.js](https://nextjs.org)** / **[Nuxt](https://nuxt.com)** | 全栈 React/Vue，SSR/SSG/ISR | React/Vue bundle | SPA / 混合 |
 | 可视化拖拽、无代码发布 | → **[Framer](https://framer.com)** / **[Webflow](https://webflow.com)** | 可视化画布，低代码 | 平台托管 | 可视化 + 代码 |
