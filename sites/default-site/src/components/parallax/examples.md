@@ -19,5 +19,4 @@ This component currently has no public props.
 
 ## Dependencies
 
-- `text-shimmer` - Animated heading text.
-- `IntersectionObserver` and `requestAnimationFrame` - Visibility and scroll update scheduling; no additional JavaScript package is required by the controller.
+- `text-shimmer`

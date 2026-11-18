@@ -31,6 +31,17 @@ import type {
 
 import { parseDemoJSX } from './jsx-parser.ts';
 
+import { consoleColors } from '../utils/helper.ts';
+
+const {
+    RESET,
+    YELLOW,
+    BOLD_YELLOW,
+    DIM,
+} = consoleColors;
+
+
+
 
 /**
  * Parse Markdown source into a Markdown AST.
@@ -348,11 +359,18 @@ function containsImportExport(node: unknown): boolean {
 /**
  * Log a skipped Demo without interrupting generation.
  */
+
 function warnSkipDemo(
+    componentDirectory: string,
     title: string,
     reason: string
 ): void {
-    // console.warn( `[WKF][PLAYGROUND][SKIP] "${title}": ${reason}`);
+
+    console.warn(
+        `\n${BOLD_YELLOW}[${componentDirectory}]\n` +
+        `  [WKF][PLAYGROUND][SKIP] "${title}": ${reason}.\n` +
+        `${RESET}\n`
+    );
 }
 
 
@@ -363,7 +381,8 @@ function warnSkipDemo(
  */
 
 export function extractDemos(
-    ast: ReturnType<typeof parseMarkdown>
+    ast: ReturnType<typeof parseMarkdown>,
+    componentDirectory: string
 ): ComponentDemo[] {
     const nodes = ast.children as unknown as MarkdownNode[];
 
@@ -450,6 +469,7 @@ export function extractDemos(
 
         if (codeBlocks.length !== 1) {
             warnSkipDemo(
+                componentDirectory,
                 title,
                 `Expected one TSX code block, found ${codeBlocks.length}.`
             );
@@ -480,6 +500,7 @@ export function extractDemos(
             program = parseDemoJSX(code);
         } catch (error) {
             warnSkipDemo(
+                componentDirectory,
                 title,
                 `Invalid TSX syntax: ${error instanceof Error
                     ? error.message
@@ -496,6 +517,7 @@ export function extractDemos(
 
         if (containsImportExport(program)) {
             warnSkipDemo(
+                componentDirectory,
                 title,
                 'Import/export statements are not supported in Demo snippets.'
             );

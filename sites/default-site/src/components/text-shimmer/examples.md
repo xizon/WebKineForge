@@ -32,4 +32,4 @@ Use it around a phrase inside a paragraph or heading. The component renders a `s
 
 ## Dependencies
 
-- None. The effect is implemented with CSS.
+- None.

@@ -64,6 +64,7 @@
         color: var(--wkf-link-color, #dfdfdf);
         transition: color 0.3s ease;
 
+        &.is-active,
         &:hover {
             color: var(--wkf-link-hover, #fff);
         }

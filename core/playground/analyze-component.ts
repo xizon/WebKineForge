@@ -26,7 +26,8 @@ import type {
  */
 export function analyzeComponentExamples(
     source: string,
-    registry: ComponentRegistry
+    registry: ComponentRegistry,
+    componentDirectory: string
 ): AnalyzedComponent {
     // 1. Parse Markdown
     const ast = parseMarkdown(source);
@@ -35,7 +36,7 @@ export function analyzeComponentExamples(
     const info = extractComponentInfo(ast);
 
     // 3. Extract demos
-    const demos = extractDemos(ast);
+    const demos = extractDemos(ast, componentDirectory);
 
     // 4. Analyze JSX dependencies
     const analyzedDemos: AnalyzedDemo[] = demos.map((demo) => {

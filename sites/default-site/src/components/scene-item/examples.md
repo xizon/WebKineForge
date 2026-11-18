@@ -96,4 +96,4 @@ Set `coveredOpacity` or `coverOffset` on an individual item when it needs differ
 
 ## Dependencies
 
-- `scenes` - Parent wrapper that coordinates the scene stack and supplies defaults.
+- `scenes`

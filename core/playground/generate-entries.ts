@@ -8,6 +8,18 @@ import { analyzeComponentExamples } from './analyze-component.ts';
 import { writeDemoEntries } from './entry-writer.ts';
 import { discoverComponents } from './discover-components.ts';
 
+import { consoleColors } from '../utils/helper.ts';
+
+const {
+    RESET,
+    YELLOW,
+    BOLD_YELLOW,
+    DIM,
+} = consoleColors;
+
+
+
+
 /**
  * Components currently enabled for Playground.
  *
@@ -77,9 +89,7 @@ async function main() {
     const PLAYGROUND_COMPONENTS = discoverComponents(componentsRoot);
     const componentDirectories = PLAYGROUND_COMPONENTS;
 
-    console.log(
-        `[WKF][PLAYGROUND] Discovered ${componentDirectories.length} components.`
-    );
+    console.log(`[WKF][PLAYGROUND] Discovered ${componentDirectories.length} components.`);
 
     let totalDemos = 0;
 
@@ -93,6 +103,7 @@ async function main() {
             componentRoot,
             'examples.md'
         );
+        // console.log(`-------`, examplesPath);
 
         if (!fs.existsSync(examplesPath)) {
             throw new Error(
@@ -111,12 +122,16 @@ async function main() {
         // Parse Markdown and resolve JSX dependencies.
         const result = analyzeComponentExamples(
             source,
-            registry
+            registry,
+            componentDirectory
         );
 
         if (result.demos.length === 0) {
+
             console.warn(
-                `[SKIP] ${componentDirectory}: No Demo headings found.`
+                `\n${BOLD_YELLOW}[${componentDirectory}]\n` +
+                `  [WKF][SKIP] ${componentDirectory}: No Demo headings found.\n` +
+                `${RESET}\n`
             );
 
             continue;
@@ -139,6 +154,7 @@ async function main() {
     }
 
     console.log('\n================================');
+    
 
     console.log(
         `[PASS] Generated ${totalDemos} Playground entries.`

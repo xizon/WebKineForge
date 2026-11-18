@@ -25,7 +25,7 @@ export function mount(element: HTMLElement | null): (() => void) | void {
     const handleHamburgerClick = (e: MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
- 
+
         const primaryMenuEl = menu.parentElement;
         if (primaryMenuEl !== null) {
             primaryMenuEl.classList.toggle('is-open');
@@ -99,23 +99,31 @@ export function mount(element: HTMLElement | null): (() => void) | void {
         }
     };
 
-    // Set active page
-    activeLink = getPageLink();
+    // Set active page.
+    // Priority: manually assigned active state > current URL.
+    activeLink = links.find((link) => link.classList.contains('is-active')) ?? getPageLink();
+
 
     // Store link click handlers if we want to clean them up cleanly too (optional but recommended)
     const linkClickHandlerMap = new Map<HTMLAnchorElement, () => void>();
 
     links.forEach((link) => {
-        link.removeAttribute('aria-current');
-        if (link === activeLink) {
+        const isActive = link === activeLink;
+
+        link.classList.toggle('is-active', isActive);
+
+        if (isActive) {
             link.setAttribute('aria-current', 'page');
+        } else {
+            link.removeAttribute('aria-current');
         }
+
         link.addEventListener('mouseenter', handleEnter);
         link.addEventListener('focus', handleEnter);
 
-        // Automatically collapse the menu after a menu item is clicked on mobile.
         const handleLinkClick = () => {
             const primaryMenuEl = menu.parentElement;
+
             if (primaryMenuEl !== null) {
                 primaryMenuEl.classList.remove('is-open');
             }

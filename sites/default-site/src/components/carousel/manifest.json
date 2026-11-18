@@ -1,0 +1,10 @@
+{
+    "name": "carousel",
+    "version": "1.0.0",
+    "type": "component",
+    "description": "A reusable carousel supporting text, HTML, SVG, images, autoplay, navigation dots, and draggable interactions.",
+    "dependencies": {
+        "gsap": "^3.15.1"
+    },
+    "assets": []
+}

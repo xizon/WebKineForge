@@ -1,0 +1,44 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="390" viewBox="0 0 495 390">
+  <defs>
+    <style>
+      .panel { fill: #111827; stroke: #273449; stroke-width: 1; }
+      .bar { fill: #1b2638; }
+      .filename { font: 600 15px -apple-system, sans-serif; fill: #e5e7eb; }
+      .lang { font: 600 12px -apple-system, sans-serif; fill: #94a3b8; letter-spacing: 1px; }
+      .code { font: 12px SFMono-Regular, Consolas, monospace; fill: #dbe4f0; }
+      .kw { fill: #c792ea; }
+      .fn { fill: #82aaff; }
+      .str { fill: #c3e88d; }
+      .prop { fill: #f78c6c; }
+    </style>
+  </defs>
+
+  <rect width="495" height="410" fill="transparent"/>
+
+
+
+  <!-- CSS -->
+  <g transform="translate(20 20)">
+    <rect class="panel" width="450" height="370" rx="12"/>
+    <path class="bar" d="M12 0h426a12 12 0 0 1 12 12v38H0V12A12 12 0 0 1 12 0z"/>
+    <circle cx="20" cy="25" r="5" fill="#fb7185"/>
+    <circle cx="38" cy="25" r="5" fill="#fbbf24"/>
+    <circle cx="56" cy="25" r="5" fill="#34d399"/>
+    <text class="filename" x="82" y="30">CSS</text>
+    <text class="lang" x="425" y="29" text-anchor="end">style.css</text>
+
+    <g class="code">
+      <text x="20" y="82"><tspan class="prop">.wkf-card</tspan> {</text>
+      <text x="38" y="104"><tspan class="fn">padding</tspan>: <tspan class="str">24px</tspan>;</text>
+      <text x="38" y="126"><tspan class="fn">border-radius</tspan>: <tspan class="str">16px</tspan>;</text>
+      <text x="38" y="148"><tspan class="fn">background</tspan>: <tspan class="str">white</tspan>;</text>
+      <text x="38" y="192"><tspan class="fn">img</tspan> {</text>
+      <text x="56" y="214"><tspan class="fn">width</tspan>: <tspan class="str">100%</tspan>;</text>
+      <text x="38" y="236">}</text>
+      <text x="20" y="258">}</text>
+    </g>
+  </g>
+
+
+</svg>

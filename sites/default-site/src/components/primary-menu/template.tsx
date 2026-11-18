@@ -1,42 +1,55 @@
+
 import './style.css';
+
+type PrimaryMenuLink = {
+    href: string;
+    page: string;
+    label: string;
+    newWindow?: boolean;
+    active?: boolean;
+};
 
 type PrimaryMenuProps = {
     theme?: 'light' | 'dark' | string;
+    links?: PrimaryMenuLink[];
+    className?: string;
+    style?: Record<string, string | number>;
+    [key: string]: any;
 };
 
-export function Template({ theme = 'dark' }: PrimaryMenuProps) {
-    const links = [
-        { href: './samplepage-1.html', page: 'samplepage-1', label: 'Sample Page 1' },
-        { href: './samplepage-2.html', page: 'samplepage-2', label: 'Sample Page 2' },
-        { href: './samplepage-3--home.html', page: 'samplepage-3', label: 'Sample Page 3', newWindow: true},
-        
-    ];
+const defaultLinks: PrimaryMenuLink[] = [];
 
+export function Template({
+    theme = 'dark',
+    links = defaultLinks,
+    className = '',
+    style,
+    ...props
+}: PrimaryMenuProps) {
     return (
-        <nav className={`wkf-primary-menu ${theme === 'light' ? 'is-light' : 'is-dark'}`} >
-
-            <button class="wkf-primary-menu__hamburger" type="button">
-                <span class="wkf-hamburger-line"></span>
-                <span class="wkf-hamburger-line"></span>
-                <span class="wkf-hamburger-line"></span>
+        <nav
+            className={`wkf-primary-menu ${theme === 'light' ? 'is-light' : 'is-dark'} ${className}`.trim()}
+            style={style}
+            {...props}
+        >
+            <button className="wkf-primary-menu__hamburger" type="button">
+                <span className="wkf-hamburger-line"></span>
+                <span className="wkf-hamburger-line"></span>
+                <span className="wkf-hamburger-line"></span>
             </button>
 
             <ul className="wkf-primary-menu__list">
-                {/* Animated background indicator */}
-                <li
-                    className="wkf-primary-menu__indicator"
-                />
+                <li className="wkf-primary-menu__indicator" />
 
-                {links.map(({ href, page, label, newWindow }) => (
-                    <li
-                        key={page}
-                        className="wkf-primary-menu__item"
-                    >
+                {links.map(({ href, page, label, newWindow, active }) => (
+                    <li key={page} className="wkf-primary-menu__item">
                         <a
                             href={href}
                             data-page={page}
                             target={newWindow ? '_blank' : '_self'}
-                            className="wkf-primary-menu__link"
+                            rel={newWindow ? 'noopener noreferrer' : undefined}
+                            className={`wkf-primary-menu__link ${active ? 'is-active' : ''}`.trim()}
+                            aria-current={active ? 'page' : undefined}
                         >
                             {label}
                         </a>

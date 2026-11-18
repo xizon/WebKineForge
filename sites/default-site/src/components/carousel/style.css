@@ -1,0 +1,87 @@
+.wkf-carousel {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+
+    /* Carousel viewport */
+    .wkf-carousel__viewport {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        touch-action: pan-y;
+        cursor: grab;
+        outline-offset: 4px;
+    }
+
+    .wkf-carousel__viewport:active {
+        cursor: grabbing;
+    }
+
+    /* Carousel track */
+    .wkf-carousel__track {
+        display: flex;
+        width: 100%;
+        will-change: transform;
+    }
+
+    .wkf-carousel__track.is-dragging {
+        cursor: grabbing;
+    }
+
+
+    /* Individual slides */
+    .wkf-carousel__slide {
+        position: relative;
+        display: flex;
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Prevent images from being dragged by the browser */
+    .wkf-carousel__slide img,
+    .wkf-carousel__slide svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        -webkit-user-drag: none;
+    }
+
+    /* Navigation dots */
+    .wkf-carousel__dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .wkf-carousel__dot {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #b8b8b8;
+        opacity: 1;
+        cursor: pointer;
+        transition:
+            background-color 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    .wkf-carousel__dot.is-active {
+        background: #333;
+        transform: scale(1.25);
+    }
+
+    .wkf-carousel__dot:hover {
+        background: #666;
+    }
+}

@@ -2,7 +2,7 @@
     "name": "primary-menu",
     "version": "1.0.0",
     "type": "component",
-    "description": "Compact primary navigation with an animated active/hover indicator and light/dark themes.",
+    "description": "Compact primary navigation.",
     "dependencies": {},
     "assets": []
 }

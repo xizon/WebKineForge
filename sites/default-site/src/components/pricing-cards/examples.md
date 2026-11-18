@@ -11,7 +11,51 @@ Renders three pricing columns on the Site's dark glass surface. When the card gr
 The component renders its built-in Free, Pro, and Ultra plans when `plans` is omitted.
 
 ```tsx
-<PricingCards />
+<div style={{background: '#333'}}>
+    <PricingCards 
+        plans={[
+        {
+            name: 'Free',
+            price: '$0',
+            cadence: 'per month',
+            summary: 'A single published page for trying the motion set.',
+            features: [
+                'One published page',
+                'Core motion components',
+                'Community notes',
+            ],
+            action: 'Start free',
+            href: '#',
+        },
+        {
+            name: 'Pro',
+            price: '$5',
+            cadence: 'per month',
+            summary: 'The working site: scroll scenes, 3D, and a shared library.',
+            features: [
+                'Unlimited pages',
+                'Scroll and 3D scenes',
+                'Shared component library',
+            ],
+            action: 'Start Pro',
+            href: '#',
+            featured: true,
+        },
+        {
+            name: 'Ultra',
+            price: '$???',
+            cadence: 'per month',
+            summary: 'Any expansion you desire.',
+            features: [
+                'Everything in Pro',
+                'Custom Tools',
+            ],
+            action: 'Ultra',
+            href: '#',
+        },
+    ]} 
+/>
+</div>
 ```
 
 ### Custom Plans
@@ -19,32 +63,34 @@ The component renders its built-in Free, Pro, and Ultra plans when `plans` is om
 Pass section copy and a replacement plans array. Each plan requires all listed text and link fields; `featured` is optional.
 
 ```tsx
-<PricingCards
-    kicker="Plans"
-    title="Choose a pace"
-    description="Three ways to publish interactive pages."
-    plans={[
-        {
-            name: 'Starter',
-            price: '$0',
-            cadence: 'per month',
-            summary: 'A single published page.',
-            features: ['One published page', 'Core motion components'],
-            action: 'Start free',
-            href: './samplepage-1.html',
-        },
-        {
-            name: 'Studio',
-            price: '$48',
-            cadence: 'per month',
-            summary: 'The working site.',
-            features: ['Unlimited pages', 'Scroll and 3D scenes'],
-            action: 'Start studio',
-            href: './samplepage-2.html',
-            featured: true,
-        },
-    ]}
-/>
+<div style={{background: '#333'}}>
+    <PricingCards
+        kicker="Plans"
+        title="Choose a pace"
+        description="Three ways to publish interactive pages."
+        plans={[
+            {
+                name: 'Starter',
+                price: '$0',
+                cadence: 'per month',
+                summary: 'A single published page.',
+                features: ['One published page', 'Core motion components'],
+                action: 'Start free',
+                href: './samplepage-1.html',
+            },
+            {
+                name: 'Studio',
+                price: '$48',
+                cadence: 'per month',
+                summary: 'The working site.',
+                features: ['Unlimited pages', 'Scroll and 3D scenes'],
+                action: 'Start studio',
+                href: './samplepage-2.html',
+                featured: true,
+            },
+        ]}
+    />
+</div>
 ```
 
 ## API Reference
@@ -60,15 +106,15 @@ Pass section copy and a replacement plans array. Each plan requires all listed t
 
 | Field | Type | Required | Description |
 |---|---|---|---|
-| `name` | `string` | Yes | Plan name. |
-| `price` | `string` | Yes | Displayed price. |
-| `cadence` | `string` | Yes | Billing period or price unit. |
-| `summary` | `string` | Yes | Short plan description. |
-| `features` | `string[]` | Yes | Feature list. |
-| `action` | `string` | Yes | Call-to-action label. |
-| `href` | `string` | Yes | Call-to-action destination. |
-| `featured` | `boolean` | No | Highlights the plan when `true`. |
+| `name` | `string` | ✅ | Plan name. |
+| `price` | `string` | ✅ | Displayed price. |
+| `cadence` | `string` | ✅ | Billing period or price unit. |
+| `summary` | `string` | ✅ | Short plan description. |
+| `features` | `string[]` | ✅ | Feature list. |
+| `action` | `string` | ✅ | Call-to-action label. |
+| `href` | `string` | ✅ | Call-to-action destination. |
+| `featured` | `boolean` | - | Highlights the plan when `true`. |
 
 ## Dependencies
 
-- None. Entrance timing uses `IntersectionObserver` and CSS transitions.
+- None. 

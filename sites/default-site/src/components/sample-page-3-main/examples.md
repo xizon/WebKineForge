@@ -50,6 +50,5 @@ Add a page: create `src/pages/<name>`, add it to `NAV` in `_scripts/data.ts`, ad
 
 ## Dependencies
 
-- [GSAP](https://gsap.com) - timelines, quickTo, ticker
-- [Three.js](https://threejs.org) - glass shards and backdrop
-- Google Fonts: Bodoni Moda (display) and Newsreader (text), loaded at runtime
+- `three`
+- `gsap`

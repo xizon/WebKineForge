@@ -18,4 +18,4 @@ This component currently has no public props.
 
 ## Dependencies
 
-- None declared by the component manifest. The visual treatment is implemented with CSS.
+- None.

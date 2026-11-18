@@ -29,14 +29,17 @@ npx webkineforge add default-site
 
 ## ☀️ 它适合你吗？
 
-| 你的需求 | 推荐工具 | 核心特性 | 运行时 | 交互模型 | 部署 / 集成 |
-|-----------|-----------|---------|-----------|---------|---------|
-| HTML 静态模版、3D、单页或多页自由交互 | **WebKineForge** | 无框架负担、AI Agent 原生、静态 HTML | 仅 vanilla | 自动挂载，直接操作 DOM | 静态托管 / 二次开发嵌入 Next、WordPress 等 |
-| 内容为主的网站、交互以独立组件为主 | **[Astro](https://astro.build)** | HTML-first Islands，默认零 JS | Islands（按需） | 组件岛，跨岛 store | 静态托管 / Node / Vercel / Netlify / Cloudflare 适配器 |
-| 全栈 Web 应用、SaaS、后台、实时功能、软件 | **[Next.js](https://nextjs.org)** / **[Nuxt](https://nuxt.com)** | 全栈 React/Vue，SSR/SSG/ISR | React/Vue bundle | SPA / 混合 | 生成静态托管 / 服务器部署 / 全栈托管（Vercel、Nitro）|
-| 可视化拖拽、无代码发布 | **[Framer](https://framer.com)** / **[Webflow](https://webflow.com)** | 可视化画布，低代码 | 平台托管 | 可视化 + 代码 | 基于平台功能 |
-| 简单博客、文档、极简 Demo | **[11ty](https://www.11ty.dev)** / Vanilla 原生 | 轻量 SSG，零配置 | 极少 / 无 | 手动 | 同 WebKineForge |
+| 你的需求 | 推荐 | 运行时开销 | 需要掌握 | AI 协作 | 模板获取 |
+|---|---|---|---|---|---|
+| 交互动效、干净的 HTML 静态模板 | **WebKineForge** | 零框架运行时 | HTML / JS / CSS (可选：Tailwind) | 内置 Agent，简单安全 | 构建生成 / `npx` 命令一键拉取 |
+| 内容为主、少量交互 | **[Astro](https://astro.build)** | 零 JS 默认（Islands 按需） | Astro 组件语法 + 前端基础 | 依赖自身约定，无专门索引 | 官方主题 / Starlight |
+| 全栈应用、实时数据 | **[Next.js](https://nextjs.org)** / **[Nuxt](https://nuxt.com)** | React/Vue 运行时 | 框架全家桶 | 生态成熟但无统一结构约定 | 模板市场丰富 |
+| 设计师可视化建站 | **[Framer](https://framer.com)** / **[Webflow](https://webflow.com)** | 平台托管 | 基本无需代码 | 平台内置 AI | 平台模板库 |
+| 极简网站 | **[11ty](https://www.11ty.dev)** / 纯手写 | 零 | 几乎为零 | 完全靠人工约定 | 无 |
 
+## ⚠️ 什么时候别选我
+
+WebKineForge 不做后端、鉴权和数据库。但它的 HTML 产物随时可以二次开发，集成进 Next.js、WordPress、PHP、Java 等任何技术栈——前端归你自由发挥，后端交给你的主系统。
 
 ---
 

@@ -36,7 +36,19 @@ export default function SamplePage() {
             {/* Navigation - Restored to your exact original structure */}
             <header className="wkf:sticky wkf:top-0 wkf:z-50 wkf:border-b wkf:border-white/70 wkf:bg-white/75 wkf:backdrop-blur-xl">
                 {`<!-- Primary Menu -->`}
-                <PrimaryMenu theme="light" />
+                <PrimaryMenu
+                    theme="light"
+                    links={[
+                        { href: './samplepage-1.html', page: 'samplepage-1', label: 'Sample Page 1' },
+                        { href: './samplepage-2.html', page: 'samplepage-2', label: 'Sample Page 2' },
+                        {
+                            href: './samplepage-3--home.html',
+                            page: 'samplepage-3',
+                            label: 'Sample Page 3',
+                            newWindow: true,
+                        },
+                    ]}
+                />
                 <nav className="wkf:bg-gradient-to-r wkf:from-blue-600 wkf:to-violet-600 wkf:font-serif wkf:text-gray-400 wkf:fixed wkf:left-0 wkf:top-0 wkf:z-[100] wkf:m-0 wkf:block wkf:w-screen wkf:bg-[rgba(255,255,255,0.1)] wkf:p-5 wkf:text-[1.2rem] wkf:backdrop-blur-[12px]">
                     <Logo theme="light" />
                 </nav>

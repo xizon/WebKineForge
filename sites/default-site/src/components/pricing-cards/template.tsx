@@ -18,47 +18,7 @@ type PricingCardsProps = {
     plans?: PricingPlan[];
 };
 
-const defaultPlans: PricingPlan[] = [
-    {
-        name: 'Free',
-        price: '$0',
-        cadence: 'per month',
-        summary: 'A single published page for trying the motion set.',
-        features: [
-            'One published page',
-            'Core motion components',
-            'Community notes',
-        ],
-        action: 'Start free',
-        href: '#',
-    },
-    {
-        name: 'Pro',
-        price: '$5',
-        cadence: 'per month',
-        summary: 'The working site: scroll scenes, 3D, and a shared library.',
-        features: [
-            'Unlimited pages',
-            'Scroll and 3D scenes',
-            'Shared component library',
-        ],
-        action: 'Start Pro',
-        href: '#',
-        featured: true,
-    },
-    {
-        name: 'Ultra',
-        price: '$???',
-        cadence: 'per month',
-        summary: 'Any expansion you desire.',
-        features: [
-            'Everything in Pro',
-            'Custom Tools',
-        ],
-        action: 'Ultra',
-        href: '#',
-    },
-];
+const defaultPlans: PricingPlan[] = [];
 
 export function Template({
     plans = defaultPlans,

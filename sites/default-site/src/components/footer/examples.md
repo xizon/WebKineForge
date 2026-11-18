@@ -35,4 +35,4 @@ Pass a `links` array to replace the default links. Each item requires a visible 
 
 ## Dependencies
 
-- None. Visual effects use CSS animations.
+- None.

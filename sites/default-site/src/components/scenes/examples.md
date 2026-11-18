@@ -96,5 +96,5 @@ Place `SceneItem` components inside `Scenes`. Each scene should contain a panel 
 
 ## Dependencies
 
-- `gsap` and `gsap/ScrollTrigger` - Scroll-driven scene transitions.
-- `scene-item` - Child component used to define each scene.
+- `gsap`
+- `scene-item`

@@ -38,5 +38,5 @@ Customize the target section for the scroll interaction by passing a CSS selecto
 
 ## Dependencies
 
-- `three` - WebGL scene, particle field, and extruded SVG logo.
-- `gsap` and `gsap/ScrollTrigger` - Motion and scroll behavior.
+- `three`
+- `gsap`

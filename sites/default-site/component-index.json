@@ -5,6 +5,11 @@
   },
   "components": [
     {
+      "name": "carousel",
+      "description": "A reusable carousel supporting text, HTML, SVG, images, autoplay, navigation dots, and draggable interactions.",
+      "type": "component"
+    },
+    {
       "name": "footer",
       "description": "Full-height footer with a decorative orbit, configurable links, and a copyright line.",
       "type": "component"
@@ -36,7 +41,7 @@
     },
     {
       "name": "primary-menu",
-      "description": "Compact primary navigation with an animated active/hover indicator and light/dark themes.",
+      "description": "Compact primary navigation.",
       "type": "component"
     },
     {

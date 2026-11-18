@@ -51,7 +51,7 @@ Provide `src` to render an image. `color` remains required for every tile and is
 
 | Field | Type | Default | Required | Description |
 |---|---|---|---|---|
-| `color` | `string` | - | Yes | Placeholder background color. |
+| `color` | `string` | - | ✅ | Placeholder background color. |
 | `src` | `string` | - | - | Image URL/path. When provided, an image is rendered instead of the color placeholder. |
 | `alt` | `string` | `''` | - | Image alternative text. |
 | `depth` | `number` | `0.4` | - | Parallax depth stored in `data-parallax`. |
@@ -60,4 +60,4 @@ Provide `src` to render an image. `color` remains required for every tile and is
 
 ## Dependencies
 
-- No external package is imported by the template. Parallax behavior is provided by the component controller.
+- None.

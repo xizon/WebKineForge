@@ -32,4 +32,4 @@ Use `theme="light"` when the logo appears on a light background.
 
 ## Dependencies
 
-- None. The logo is embedded as inline SVG.
+- None.

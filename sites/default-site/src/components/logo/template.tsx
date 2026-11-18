@@ -18,7 +18,7 @@ export function Template({
     const isLight = theme === 'light';
 
     return (
-        <span class="wkf-brand">
+        <span className="wkf-brand">
             <a href={link} {...(pjax ? { 'data-pjax': '' } : {})}>
                 <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 3913 1009">
                     <path fill-rule="evenodd" stroke="rgb(26, 236, 79)" stroke-width="0px" stroke-linecap="butt" stroke-linejoin="miter" fill={isLight ? 'rgb(148,148,148)' : 'rgb(155, 155, 155)'}
