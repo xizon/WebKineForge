@@ -2,7 +2,7 @@
 
 ## Overview
 
-Renders three pricing columns on the Site's dark glass surface. When the card grid enters the viewport, the columns appear from left to right. Reduced-motion preferences show them immediately.
+Pricing cards that enter in sequence when the grid reaches the viewport. 
 
 ## Examples
 

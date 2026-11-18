@@ -1,19 +1,34 @@
 
 import './style.css';
 
-export function Template() {
+type ProductScrollProps = {
+    title?: string;
+    accent?: string;
+    description?: string;
+};
+
+export function Template({
+    title = '',
+    accent = '',
+    description = '',
+}: ProductScrollProps) {
     return (
         <section className="wkf-product">
             <div className="wkf-product__sticky">
                 <div className="wkf-product__text">
-                    <h2 className="wkf-product__title">
-                        Every detail has a&nbsp;
-                        <em>purpose.</em>
-                    </h2>
+                    {title || accent ? (
+                        <h2 className="wkf-product__title">
+                            {title}
+                            {title && accent ? '\u00a0' : ''}
+                            {accent ? <em>{accent}</em> : null}
+                        </h2>
+                    ) : null}
 
-                    <p>
-                        Bringing static website development back to the joy of creation.
-                    </p>
+                    {description ? (
+                        <p>
+                            {description}
+                        </p>
+                    ) : null}
                 </div>
 
                 <div

@@ -1,17 +1,50 @@
 import './style.css';
-import { NAV, REPO_URL, type ViewKey } from './_scripts/data';
+import type {
+    AboutContent,
+    ContactContent,
+    FooterContent,
+    HeroContent,
+    NavItem,
+    ViewKey,
+    Work,
+} from './_scripts/data';
 import { renderView } from './_scripts/view-templates';
 import Logo from '@/components/logo';
+
+type SamplePage3MainProps = {
+    view?: ViewKey;
+    logoLink?: string;
+    logoHighlight?: string;
+    nav?: NavItem[];
+    footer?: FooterContent;
+    hero?: HeroContent;
+    works?: Work[];
+    about?: AboutContent;
+    contact?: ContactContent;
+};
 
 /**
  * The site shell.
  *
- * Every page (samplepage-3--home.html, samplepage-3--works.html, samplepage-3--about.html, samplepage-3--contact.html) renders this
- * same shell with its own view inside <main>. The first page you open is a
- * complete document; after that the controller swaps only the view, so the
- * WebGL stage, the navigation and the footer never reload.
+ * Every page (home, works, about, contact) renders this same shell with its
+ * own view inside <main>. All copy, links and works are passed in as props.
+ * The first page you open is a complete document; after that the controller
+ * swaps only the view, so the WebGL stage, the navigation and the footer
+ * never reload.
  */
-export function Template({ view = 'home' }: { view?: ViewKey }) {
+export function Template({
+    view = 'home',
+    logoLink = '',
+    logoHighlight = '',
+    nav = [],
+    footer = {},
+    hero,
+    works,
+    about,
+    contact,
+}: SamplePage3MainProps) {
+    const footerHref = footer.href ?? '';
+
     return (
         <div className="wkf-app" data-view={view} data-boot="">
             <div className="wkf-stage" aria-hidden="true"></div>
@@ -21,10 +54,10 @@ export function Template({ view = 'home' }: { view?: ViewKey }) {
             
 
             <header className="wkf-bar">
-                <Logo highlight="#d6a319" link="./samplepage-3--home.html" pjax />
+                <Logo highlight={logoHighlight || undefined} link={logoLink} pjax />
 
                 <nav className="wkf-nav">
-                    {NAV.map((item, index) => (
+                    {nav.map((item, index) => (
                         
                         <a
                             className={`wkf-nav__link ${item.key === view ? 'is-active' : ''}`}
@@ -50,13 +83,19 @@ export function Template({ view = 'home' }: { view?: ViewKey }) {
             </header>
 
             <main className="wkf-main" id="wkf-main">
-                {renderView(view)}
+                {renderView(view, { hero, works, about, contact })}
             </main>
 
             <footer className="wkf-foot">
-                <a className="wkf-foot__link" href={REPO_URL} target="_blank" rel="noopener">
-                    &copy; 2026 WebKineForge.
-                </a>
+                {footer.text ? (
+                    <a
+                        className="wkf-foot__link"
+                        href={footerHref || undefined}
+                        {...(footerHref ? { target: '_blank', rel: 'noopener' } : {})}
+                    >
+                        {footer.text}
+                    </a>
+                ) : null}
             </footer>
 
             <div className="wkf-ornaments" aria-hidden="true">

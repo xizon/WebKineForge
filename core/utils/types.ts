@@ -262,6 +262,18 @@ export type MarkdownNode = {
     value?: string;
     lang?: string;
     children?: MarkdownNode[];
+
+    // for "marked"
+    // Record the position of each Markdown node within the original Markdown text, 
+    // so that we can accurately extract the original content.
+    position?: {
+        start: {
+            offset: number;
+        };
+        end: {
+            offset: number;
+        };
+    };
 };
 
 export interface PlaygroundMarkdownTable {
@@ -270,6 +282,7 @@ export interface PlaygroundMarkdownTable {
 }
 
 export interface PlaygroundMarkdownSection {
+    markdown?: string; // for "marked"
     title: string;
     paragraphs: string[];
     lists: string[];

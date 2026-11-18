@@ -6,9 +6,16 @@ import type {
 import { escapeHtml } from '../utils/helper.ts';
 import { renderDocument } from '../processors/html-shell.ts';
 
+import {
+    renderMarkdown
+} from './markdown-parser.ts';
+
+
+
 import type {
     PlaygroundMarkdownSection,
 } from '../utils/types.ts';
+
 
 /**
  * Render an extracted Markdown documentation section.
@@ -18,7 +25,10 @@ function renderDocumentationSection(
     className: string
 ): string {
 
+    const hasMarkdown = Boolean(section.markdown?.trim());
+
     const hasContent =
+        hasMarkdown ||
         section.paragraphs.length > 0 ||
         section.lists.length > 0 ||
         section.tables.length > 0;
@@ -27,25 +37,24 @@ function renderDocumentationSection(
         return '';
     }
 
-    const paragraphsHtml = section.paragraphs
-        .map((paragraph) => `
-            <p>${escapeHtml(paragraph)}</p>
-        `)
-        .join('');
+    if (!hasContent) {
+        return '';
+    }
 
-    const listsHtml = section.lists.length
-        ? `
-            <ul>
-                ${section.lists.map((item) => `
-                    <li>${escapeHtml(item)}</li>
-                `).join('')}
-            </ul>
-        `
-        : '';
-
-    const tablesHtml = section.tables
-        .map((table) => {
-
+const contentHtml = hasMarkdown
+    ? renderMarkdown(section.markdown!)
+    : [
+        ...section.paragraphs.map(
+            (paragraph) => `<p>${escapeHtml(paragraph)}</p>`
+        ),
+        ...section.lists.length
+            ? [
+                `<ul>${section.lists.map(
+                    (item) => `<li>${escapeHtml(item)}</li>`
+                ).join('')}</ul>`
+            ]
+            : [],
+        ...section.tables.map((table) => {
             const headersHtml = table.headers
                 .map((header) => `
                     <th scope="col">${escapeHtml(header)}</th>
@@ -65,18 +74,13 @@ function renderDocumentationSection(
             return `
                 <div class="wkf-playground__table-wrap">
                     <table>
-                        <thead>
-                            <tr>${headersHtml}</tr>
-                        </thead>
-
-                        <tbody>
-                            ${rowsHtml}
-                        </tbody>
+                        <thead><tr>${headersHtml}</tr></thead>
+                        <tbody>${rowsHtml}</tbody>
                     </table>
                 </div>
             `;
-        })
-        .join('');
+        }),
+    ].join('');
 
     const heading = section.title ||
         (className === 'api-reference'
@@ -90,9 +94,7 @@ function renderDocumentationSection(
         >
             <h2>${escapeHtml(heading)}</h2>
 
-            ${paragraphsHtml}
-            ${tablesHtml}
-            ${listsHtml}
+            ${contentHtml}
         </section>
     `;
 }
@@ -171,9 +173,9 @@ export function renderPlaygroundDocument(
                     ${escapeHtml(componentName)}
                 </h1>
 
-                <p class="wkf-playground__overview">
-                    ${escapeHtml(overview)}
-                </p>
+                <div class="wkf-playground__overview">
+                     ${renderMarkdown(overview)}
+                </div>
 
             </header>
 
@@ -186,9 +188,9 @@ export function renderPlaygroundDocument(
                     ${escapeHtml(demoTitle)}
                 </h2>
 
-                <p>
-                    ${escapeHtml(demoDescription)}
-                </p>
+                <div class="wkf-playground__demo-description">
+                    ${renderMarkdown(demoDescription)}
+                </div>
 
             ${hasDemoCode ? `
                 <div
@@ -228,7 +230,7 @@ export function renderPlaygroundDocument(
 
                     <section
                         id="playground-panel-preview"
-                        class="wkf-playground__panel"
+                        class="wkf-playground__panel wkf-playground__panel--preview"
                         role="tabpanel"
                     >
                         <div
@@ -484,7 +486,7 @@ export function renderPlaygroundDocument(
         .wkf-playground {
             width: min(1200px, calc(100% - 48px));
             margin: 0 auto;
-            padding: 72px 0;
+            padding: 1.5rem 0;
         }
 
         .wkf-playground__header {
@@ -493,17 +495,17 @@ export function renderPlaygroundDocument(
 
         .wkf-playground__header h1 {
             margin: 12px 0;
-            font-size: clamp(32px, 5vw, 52px);
+            font-size: clamp(26px, 5vw, 36px);
         }
 
         .wkf-playground__overview {
-            max-width: 680px;
-            color: #888;
+            max-width: 99%;
             line-height: 1.7;
+            
         }
 
         .wkf-playground__demo h2 {
-            font-size: 24px;
+            font-size: 1.5rem;
         }
 
         .wkf-playground__demo > p {
@@ -523,13 +525,13 @@ export function renderPlaygroundDocument(
 
         .wkf-playground__documentation h2 {
             margin: 0 0 22px;
-            font-size: 21px;
+            font-size: 1.3125rem;
             font-weight: 650;
         }
 
         .wkf-playground__documentation p {
             color: #888;
-            font-size: 13px;
+            font-size: 0.8125rem;
             line-height: 1.8;
             white-space: pre-line;
         }
@@ -546,7 +548,7 @@ export function renderPlaygroundDocument(
             width: 100%;
             min-width: 560px;
             border-collapse: collapse;
-            font-size: 12px;
+            font-size: 0.875rem;
             line-height: 1.6;
             text-align: left;
         }
@@ -585,7 +587,6 @@ export function renderPlaygroundDocument(
             gap: 9px;
             padding-left: 21px;
             color: #777;
-            font-size: 13px;
             line-height: 1.7;
         }
 
@@ -617,7 +618,7 @@ export function renderPlaygroundDocument(
             background: transparent;
             color: #888;
             font: inherit;
-            font-size: 14px;
+            font-size: 0.875rem;
             cursor: pointer;
             transition: color 0.2s ease;
         }
@@ -649,6 +650,20 @@ export function renderPlaygroundDocument(
             display: none;
         }
 
+        .wkf-playground__panel:not(.wkf-playground__panel--preview) {
+            background: #333;
+            border-radius: 0.35rem;
+        }
+        .wkf-playground__panel:not(.wkf-playground__panel--preview) .wkf-playground__code {
+            padding: 0 1rem;
+            font-size: 0.75rem;
+        }
+        .wkf-playground__panel:not(.wkf-playground__panel--preview) .wkf-playground__code code {
+            background: none;
+            color: #ddd;
+            
+        }
+
 
         /* ----------------------------------------
            Preview
@@ -677,34 +692,46 @@ export function renderPlaygroundDocument(
             max-width: 420px;
             margin: 0;
             color: #888;
-            font-size: 13px;
+            font-size: 0.8125rem;
             line-height: 1.7;
         }
 
 
         /* ----------------------------------------
-           Code
+           Code, Blockquote, P
         ---------------------------------------- */
+         .wkf-preview-main p {
+             line-height: 1.7;
+         }
 
-        .wkf-playground__code {
-            margin: 0;
-            padding: 24px;
-            overflow-x: auto;
-            border-radius: 10px;
-            background: #171717;
-            color: #e5e7eb;
-            font-size: 13px;
-            line-height: 1.7;
-            tab-size: 2;
+         .wkf-preview-main code {
+            color: #d63384;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            box-decoration-break: slice;
+            overflow-wrap: break-word;
+            border-radius: .375rem;
+            border-width: 1px;
+            border-color: rgba(0, 0, 0, 0.04);
+            background-color: rgba(0, 0, 0, 0.03);
+            padding-left: .25em;
+            padding-right: .25em;
+            padding-top: .125rem;
+            padding-bottom: .125rem;
+            font-size: .9em;
         }
 
-        .wkf-playground__code code {
-            font-family:
-                "SFMono-Regular",
-                Consolas,
-                monospace;
-            white-space: pre;
+        .wkf-preview-main blockquote {
+            margin: 1.25rem 0;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #333;
+            background-color: #f3f3f3ff;
+            border-radius: 0 0.375rem 0.375rem 0;
+            font-size: 0.95em;
+            line-height: 1.6;
         }
+
+        
+
 
         .wkf-playground__code-header {
             display: flex;
@@ -714,7 +741,7 @@ export function renderPlaygroundDocument(
             border-radius: 10px 10px 0 0;
             background: #202020;
             color: #999;
-            font-size: 12px;
+            font-size: 0.75rem;
         }
 
         .wkf-playground__copy {
@@ -723,7 +750,7 @@ export function renderPlaygroundDocument(
             border-radius: 6px;
             background: transparent;
             color: #ddd;
-            font-size: 12px;
+            font-size: 0.75rem;
             cursor: pointer;
             transition: background 0.2s ease;
         }
@@ -732,15 +759,11 @@ export function renderPlaygroundDocument(
             background: #363636;
         }
 
-        .wkf-playground__code {
-            border-radius: 0 0 10px 10px;
-        }
-
         .wkf-playground__copy-status {
             min-height: 20px;
             margin: 8px 0 0;
             color: #888;
-            font-size: 12px;
+            font-size: 0.75rem;
         }
 
 
@@ -769,10 +792,6 @@ export function renderPlaygroundDocument(
                 margin-bottom: 28px;
             }
 
-            .wkf-playground__code {
-                padding: 16px;
-                font-size: 12px;
-            }
         }
     `;
 

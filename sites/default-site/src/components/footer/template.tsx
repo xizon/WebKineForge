@@ -6,16 +6,17 @@ type SiteFooterLink = {
 };
 
 type SiteFooterProps = {
+    eyebrow?: string;
+    title?: string;
     links?: SiteFooterLink[];
+    copyright?: string;
 };
 
-const defaultLinks: SiteFooterLink[] = [
-    { label: 'GitHub', href: 'https://github.com/xizon/WebKineForge' },
-    { label: 'Website', href: 'https://uiux.cc' }
-];
-
 export function Template({
-    links = defaultLinks,
+    eyebrow = '',
+    title = '',
+    links = [],
+    copyright = '',
 }: SiteFooterProps) {
     return (
 
@@ -25,31 +26,35 @@ export function Template({
                 aria-hidden="true"
             ></div>
 
-            <p className="wkf-site-footer__eyebrow">
-                Elsewhere
-            </p>
+            {eyebrow ? (
+                <p className="wkf-site-footer__eyebrow">
+                    {eyebrow}
+                </p>
+            ) : null}
 
-            <p className="wkf-site-footer__title">
-                UI-First, Always
-            </p>
+            {title ? (
+                <p className="wkf-site-footer__title">
+                    {title}
+                </p>
+            ) : null}
 
-
-
-            <ul className="wkf-site-footer__links">
-                {links.map((link) => (
-                    <li key={link.label}>
-                        <a
-                            className="wkf-site-footer__link"
-                            href={link.href}
-                            {...(link.href.startsWith('http')
-                                ? { target: '_blank', rel: 'noreferrer' }
-                                : {})}
-                        >
-                            {link.label}
-                        </a>
-                    </li>
-                ))}
-            </ul>
+            {links.length > 0 ? (
+                <ul className="wkf-site-footer__links">
+                    {links.map((link, index) => (
+                        <li key={`${link.label}-${index}`}>
+                            <a
+                                className="wkf-site-footer__link"
+                                href={link.href}
+                                {...(link.href.startsWith('http')
+                                    ? { target: '_blank', rel: 'noreferrer' }
+                                    : {})}
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            ) : null}
 
             <div className="wkf-site-footer__bar">
                 <span
@@ -57,9 +62,11 @@ export function Template({
                     aria-hidden="true"
                 ></span>
 
-                <p className="wkf-site-footer__copy">
-                    &copy; 2026 WebKineForge.
-                </p>
+                {copyright ? (
+                    <p className="wkf-site-footer__copy">
+                        {copyright}
+                    </p>
+                ) : null}
             </div>
         </footer>
 

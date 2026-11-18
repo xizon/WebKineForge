@@ -79,7 +79,8 @@ export async function getPlaygroundDevData(): Promise<PlaygroundDevData> {
 
         const result = analyzeComponentExamples(
             source,
-            registry
+            registry,
+            componentDirectory
         );
 
         const entryDir = path.join(

@@ -16,7 +16,7 @@
  * Valid Demos and other components should continue to be processed.
  */
 
-
+import { marked } from 'marked';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
@@ -42,6 +42,17 @@ const {
 
 
 
+/**
+ * Render Markdown source into HTML.
+ */
+export function renderMarkdown(source: string): string {
+    if (!source.trim()) return '';
+
+    return marked.parse(source, {
+        async: false,
+    }) as string;
+}
+
 
 /**
  * Parse Markdown source into a Markdown AST.
@@ -51,6 +62,26 @@ export function parseMarkdown(source: string) {
         .use(remarkParse)
         .use(remarkGfm)
         .parse(source);
+}
+
+
+/**
+ * Extract original Markdown source from AST nodes.
+ */
+function getMarkdownSource(
+    source: string,
+    nodes: MarkdownNode[]
+): string {
+    if (!nodes.length) return '';
+
+    const start = nodes[0].position?.start.offset;
+    const end = nodes[nodes.length - 1].position?.end.offset;
+
+    if (start === undefined || end === undefined) {
+        return '';
+    }
+
+    return source.slice(start, end).trim();
 }
 
 /**
@@ -204,6 +235,7 @@ function findMarkdownSection(
  * Extract paragraphs, lists and GFM tables from a Markdown section.
  */
 function extractMarkdownSection(
+    source: string,
     nodes: MarkdownNode[],
     key: PlaygroundSectionKey
 ): PlaygroundMarkdownSection {
@@ -248,6 +280,7 @@ function extractMarkdownSection(
 
     return {
         title: section.title,
+        markdown: getMarkdownSource(source, section.content),
         paragraphs,
         lists,
         tables,
@@ -261,7 +294,8 @@ function extractMarkdownSection(
  * Missing metadata should not interrupt Playground generation.
  */
 export function extractComponentInfo(
-    ast: ReturnType<typeof parseMarkdown>
+    ast: ReturnType<typeof parseMarkdown>,
+    source: string
 ): ComponentInfo {
 
     const nodes = ast.children as unknown as MarkdownNode[];
@@ -293,20 +327,24 @@ export function extractComponentInfo(
         );
     }
 
-    const overview = overviewSection.content
-        .filter((node) => node.type === 'paragraph')
-        .map(getNodeText)
-        .join('\n\n')
-        .trim();
+    const overview = getMarkdownSource(
+        source,
+        overviewSection.content
+    );
+
+
 
     // API Reference
     const apiReference = extractMarkdownSection(
+        source,
         nodes,
         'apiReference'
     );
 
+
     // Dependencies
     const dependencies = extractMarkdownSection(
+        source,
         nodes,
         'dependencies'
     );
@@ -382,8 +420,10 @@ function warnSkipDemo(
 
 export function extractDemos(
     ast: ReturnType<typeof parseMarkdown>,
+    source: string,
     componentDirectory: string
 ): ComponentDemo[] {
+
     const nodes = ast.children as unknown as MarkdownNode[];
 
     // Find ## Examples
@@ -440,11 +480,17 @@ export function extractDemos(
         );
 
         // Extract description paragraphs
-        const description = content
-            .filter((node) => node.type === 'paragraph')
-            .map(getNodeText)
-            .join('\n\n')
-            .trim();
+        const descriptionNodes = content.filter(
+            (node) => !(
+                node.type === 'code' &&
+                node.lang?.toLowerCase() === 'tsx'
+            )
+        );
+
+        const description = getMarkdownSource(
+            source,
+            descriptionNodes
+        );
 
         // ----------------------------------------
         // 1. Find TSX code blocks

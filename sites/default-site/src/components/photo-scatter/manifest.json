@@ -2,7 +2,7 @@
     "name": "photo-scatter",
     "version": "1.0.0",
     "type": "component",
-    "description": "Asymmetric plates that drift at different speeds. Each plate is a solid color until an image address is provided.",
+    "description": "Displays a scattered photo board with up to seven positioned tiles. ",
     "dependencies": {},
     "assets": []
 }

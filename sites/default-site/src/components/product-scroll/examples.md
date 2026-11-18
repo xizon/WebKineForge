@@ -2,20 +2,31 @@
 
 ## Overview
 
-A self-contained product-story section with a sticky composition, editorial copy, and decorative rings/object. Its layout and content are currently defined in the component template; it does not expose props.
+A scroll-driven product-story section with a pinned composition, editorial copy, and decorative rings/object.
 
 ## Examples
 
 ### Basic Usage
 
+A basic effect.
+
 ```tsx
-<ProductScroll />
+<ProductScroll
+    title="Every detail has a"
+    accent="purpose."
+    description="Bringing static website development back to the joy of creation."
+/>
 ```
+
 
 ## API Reference
 
-This component currently has no public props.
+| Parameter | Type | Default | Required | Description |
+|---|---|---|---|---|
+| `title` | `string` | `""` | - | Heading text before the emphasized part. |
+| `accent` | `string` | `""` | - | Emphasized (`<em>`) part of the heading, displayed after `title`. |
+| `description` | `string` | `""` | - | Supporting paragraph below the heading. |
 
 ## Dependencies
 
-- None.
+- `gsap`

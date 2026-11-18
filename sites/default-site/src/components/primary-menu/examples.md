@@ -36,7 +36,7 @@ The default theme is dark. The component currently provides links to the sample 
 |---|---|---|---|---|
 | `theme` | `string` | `'dark'` | - | Selects the visual theme. Use `'light'` for the light variant; other values render the dark variant. |
 | `links` | `PrimaryMenuLink[]` | `defaultLinks` | - | Defines the navigation items. Each item specifies its destination, page identifier, label, and optional new-window behavior. |
-| `className` | `string` | `''` | - | Adds custom CSS classes to the navigation element. |
+| `className` | `string` | `""` | - | Adds custom CSS classes to the navigation element. |
 | `style` | `Record<string, string \| number>` | - | - | Applies custom inline CSS styles to the navigation element. |
 | `...props` | `object` | - | - | Accepts additional HTML attributes and forwards them to the root `<nav>` element. |
 

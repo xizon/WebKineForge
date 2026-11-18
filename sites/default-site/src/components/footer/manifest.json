@@ -2,7 +2,7 @@
     "name": "footer",
     "version": "1.0.0",
     "type": "component",
-    "description": "Full-height footer with a decorative orbit, configurable links, and a copyright line.",
+    "description": "A full-height footer with a decorative orbit.",
     "dependencies": {},
     "assets": []
 }

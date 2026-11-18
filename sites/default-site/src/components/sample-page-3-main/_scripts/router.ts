@@ -4,7 +4,7 @@ import type { Ctx, ViewCtl, ViewFactory } from './view-controllers';
 /**
  * A tiny pjax-style router.
  *
- * Links stay ordinary relative links (./samplepage-3--works.html), so the site still works
+ * Links stay ordinary relative links (e.g. ./works.html), so the site still works
  * without JavaScript, from a search engine, or when opened directly.
  * With JavaScript, a click:
  *   1. fetches the target page and plays the current view's exit,

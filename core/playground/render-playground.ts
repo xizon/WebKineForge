@@ -138,7 +138,8 @@ async function main() {
 
             const result = analyzeComponentExamples(
                 source,
-                registry
+                registry,
+                componentDirectory
             );
 
             // 8. Locate generated TSX entries

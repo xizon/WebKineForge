@@ -33,10 +33,15 @@ export function analyzeComponentExamples(
     const ast = parseMarkdown(source);
 
     // 2. Extract component information
-    const info = extractComponentInfo(ast);
+    const info = extractComponentInfo(ast, source);
 
     // 3. Extract demos
-    const demos = extractDemos(ast, componentDirectory);
+    const demos = extractDemos(
+        ast,
+        source,
+        componentDirectory
+    );
+    
 
     // 4. Analyze JSX dependencies
     const analyzedDemos: AnalyzedDemo[] = demos.map((demo) => {

@@ -1,29 +1,24 @@
-# Site Footer
+# Footer
 
 ## Overview
 
-A full-height footer with a decorative orbit, configurable external or internal links, and a copyright line.
+A full-height footer with a decorative orbit.
 
 ## Examples
 
 ### Basic Usage
 
-`links` is optional. When omitted, the component displays the GitHub and Website links defined by the component.
-
-```tsx
-<Footer />
-```
-
-### Custom Links
-
-Pass a `links` array to replace the default links. Each item requires a visible `label` and an `href`.
+Pass the props from the page.
 
 ```tsx
 <Footer
+    eyebrow="Elsewhere"
+    title="UI-First, Always"
     links={[
-        { label: 'About', href: './about.html' },
         { label: 'GitHub', href: 'https://github.com/xizon/WebKineForge' },
+        { label: 'Website', href: 'https://uiux.cc' },
     ]}
+    copyright="© 2026 WebKineForge."
 />
 ```
 
@@ -31,7 +26,10 @@ Pass a `links` array to replace the default links. Each item requires a visible 
 
 | Parameter | Type | Default | Required | Description |
 |---|---|---|---|---|
-| `links` | `SiteFooterLink[]` | GitHub and Website links | - | Footer links. Each item contains `label: string` and `href: string`. External `http` links open in a new tab. |
+| `eyebrow` | `string` | `""` | - | Small label above the title. Not rendered when empty. |
+| `title` | `string` | `""` | - | Main footer headline. Not rendered when empty. |
+| `links` | `SiteFooterLink[]` | `[]` | - | Footer links. Each item contains `label: string` and `href: string`. External `http` links open in a new tab. The list is not rendered when empty. |
+| `copyright` | `string` | `""` | - | Copyright line shown in the bottom bar. Not rendered when empty. |
 
 ## Dependencies
 

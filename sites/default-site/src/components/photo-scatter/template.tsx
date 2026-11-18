@@ -10,27 +10,29 @@ type PhotoTile = {
 };
 
 type PhotoScatterProps = {
+    title?: string;
+    description?: string;
     tiles?: PhotoTile[];
 };
-
-const defaultTiles: PhotoTile[] = [
-    { color: '#241c18', depth: 0.55, shift: -0.7, label: 'Image 01' },
-    { color: '#102028', depth: 0.22, shift: 0.85, label: 'Image 02' },
-    { color: '#2a1822', depth: 0.86, shift: 0.4, label: 'Image 03' },
-];
 
 const slots = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
 
 export function Template({
-    tiles = defaultTiles,
+    title = '',
+    description = '',
+    tiles = [],
 }: PhotoScatterProps) {
     return (
         <section className="wkf-photo-scatter">
             <header className="wkf-photo-scatter__header">
                 <div>
-                    <h2 className="wkf-photo-scatter__title">Simple, enjoy it!</h2>
+                    {title ? (
+                        <h2 className="wkf-photo-scatter__title">{title}</h2>
+                    ) : null}
                 </div>
-                <p className="wkf-photo-scatter__lede">No React, Vue, or other front-end frameworks required at runtime, and no framework-specific syntax or APIs to learn.</p>
+                {description ? (
+                    <p className="wkf-photo-scatter__lede">{description}</p>
+                ) : null}
                 <span className="wkf-photo-scatter__mark" aria-hidden="true"></span>
             </header>
 
@@ -52,7 +54,7 @@ export function Template({
                                     style={{ background: tile.color }}
                                 ></span>
                             )}
-                            <figcaption>{tile.label ?? `Image ${String(index + 1).padStart(2, '0')}`}</figcaption>
+                            {tile.label ? <figcaption>{tile.label}</figcaption> : null}
                         </figure>
                     );
                 })}

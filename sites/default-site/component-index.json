@@ -11,7 +11,7 @@
     },
     {
       "name": "footer",
-      "description": "Full-height footer with a decorative orbit, configurable links, and a copyright line.",
+      "description": "A full-height footer with a decorative orbit.",
       "type": "component"
     },
     {
@@ -31,12 +31,12 @@
     },
     {
       "name": "photo-scatter",
-      "description": "Asymmetric plates that drift at different speeds. Each plate is a solid color until an image address is provided.",
+      "description": "Displays a scattered photo board with up to seven positioned tiles.",
       "type": "component"
     },
     {
       "name": "pricing-cards",
-      "description": "Three-column pricing cards that enter in sequence when the grid reaches the viewport",
+      "description": "Pricing cards that enter in sequence when the grid reaches the viewport",
       "type": "component"
     },
     {

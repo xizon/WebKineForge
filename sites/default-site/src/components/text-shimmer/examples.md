@@ -14,15 +14,6 @@ A lightweight inline wrapper that applies the component's animated shimmer treat
 </h2>
 ```
 
-### Wrap Inline Text
-
-Use it around a phrase inside a paragraph or heading. The component renders a `span`, so place it where phrasing content is valid.
-
-```tsx
-<p>
-    Built for the web, <TextShimmer>designed to feel alive</TextShimmer>.
-</p>
-```
 
 ## API Reference
 

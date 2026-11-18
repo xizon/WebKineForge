@@ -11,9 +11,7 @@ This component is currently an empty placeholder. Its template renders an empty 
 
 ### Basic Usage
 
-Valid only when used within a page.
-
-`<SamplePage2Main />`
+Valid only when used within a page. `<SamplePage2Main />`
 
 
 ## API Reference

@@ -1,31 +1,35 @@
-import { ABOUT_LINES, CONTACT, HERO, WORKS, type ViewKey } from './data';
+import type { ViewContent, ViewKey } from './data';
 
 /**
  * Markup for each page's content.
  * The shell (template.tsx) puts exactly one of these inside <main>.
  * The router later reads `.wkf-view` out of the fetched HTML and swaps it in.
+ *
+ * All copy comes from `content`; nothing is written here. Elements the view
+ * controllers look up (hero title, works track, contact title) are always
+ * rendered, even when their text is empty.
  */
 
-function HomeView() {
+function HomeView({ hero }: Pick<ViewContent, 'hero'>) {
     return (
         <section className="wkf-view wkf-view--home" data-view="home">
             <div className="wkf-hero">
                 <h1 className="wkf-hero__title" data-split>
-                    {HERO.title}
+                    {hero?.title ?? ''}
                 </h1>
-                <p className="wkf-hero__sub">{HERO.subtitle}</p>
+                <p className="wkf-hero__sub">{hero?.subtitle ?? ''}</p>
             </div>
         </section>
     );
 }
 
-function WorksView() {
+function WorksView({ works = [] }: Pick<ViewContent, 'works'>) {
     return (
         <section className="wkf-view wkf-view--works" data-view="works">
             <div className="wkf-works">
                 <div className="wkf-works__track">
-                    {WORKS.map((w, i) => (
-                        <article className="wkf-work" data-ratio={w.ratio} data-motif={w.motif} key={w.title}>
+                    {works.map((w, i) => (
+                        <article className="wkf-work" data-ratio={w.ratio} data-motif={w.motif} key={`${w.title ?? 'work'}-${i}`}>
                             <div className="wkf-work__rise">
                                 <div className="wkf-work__tilt">
                                     <div
@@ -38,7 +42,7 @@ function WorksView() {
                                             <img
                                                 className="wkf-work__img"
                                                 src={w.image}
-                                                alt={w.title}
+                                                alt={w.title ?? ''}
                                                 loading={i < 4 ? 'eager' : 'lazy'}
                                                 decoding="async"
                                                 draggable={false}
@@ -48,8 +52,8 @@ function WorksView() {
                                         )}
                                         <span className="wkf-work__sheen"></span>
                                         <span className="wkf-work__edge"></span>
-                                        <h2 className="wkf-work__title">{w.title}</h2>
-                                        <p className="wkf-work__kind">{w.kind}</p>
+                                        {w.title ? <h2 className="wkf-work__title">{w.title}</h2> : null}
+                                        {w.kind ? <p className="wkf-work__kind">{w.kind}</p> : null}
                                     </div>
                                 </div>
                             </div>
@@ -61,13 +65,14 @@ function WorksView() {
     );
 }
 
-function AboutView() {
+function AboutView({ about }: Pick<ViewContent, 'about'>) {
+    const lines = about?.lines ?? [];
     return (
         <section className="wkf-view wkf-view--about" data-view="about">
             <div className="wkf-about">
-                <h1 className="wkf-visually-hidden">About WebKineForge</h1>
-                {ABOUT_LINES.map((line) => (
-                    <p className="wkf-about__line" data-line key={line}>
+                {about?.title ? <h1 className="wkf-visually-hidden">{about.title}</h1> : null}
+                {lines.map((line, i) => (
+                    <p className="wkf-about__line" data-line key={`${i}-${line}`}>
                         {line}
                     </p>
                 ))}
@@ -77,17 +82,20 @@ function AboutView() {
     );
 }
 
-function ContactView() {
-    const sealText = Array(3).fill(CONTACT.seal).join('\u00a0\u00a0\u00a0\u00a0\u00a0') + '\u00a0\u00a0\u00a0\u00a0\u00a0';
+function ContactView({ contact }: Pick<ViewContent, 'contact'>) {
+    const links = contact?.links ?? [];
+    const seal = contact?.seal ?? '';
+    const gap = '\u00a0\u00a0\u00a0\u00a0\u00a0';
+    const sealText = seal ? Array(3).fill(seal).join(gap) + gap : '';
     return (
         <section className="wkf-view wkf-view--contact" data-view="contact">
             <div className="wkf-contact">
                 <h1 className="wkf-contact__title" data-words>
-                    {CONTACT.title}
+                    {contact?.title ?? ''}
                 </h1>
                 <ul className="wkf-contact__list">
-                    {CONTACT.links.map((l) => (
-                        <li className="wkf-contact__item" key={l.label}>
+                    {links.map((l, i) => (
+                        <li className="wkf-contact__item" key={`${l.label}-${i}`}>
                             <a
                                 className="wkf-contact__link"
                                 href={l.href}
@@ -95,7 +103,7 @@ function ContactView() {
                                 rel={l.href.startsWith('mailto:') ? undefined : 'noopener'}
                             >
                                 <span className="wkf-contact__label">{l.label}</span>
-                                <span className="wkf-contact__note">{l.note}</span>
+                                {l.note ? <span className="wkf-contact__note">{l.note}</span> : null}
                                 <svg className="wkf-contact__icon" viewBox="0 0 24 24" aria-hidden="true">
                                     <path
                                         d="M6 18L18 6M9 6h9v9"
@@ -114,13 +122,15 @@ function ContactView() {
                     <defs>
                         <path id="wkf-seal-path" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0" />
                     </defs>
-                    <g className="wkf-seal__ring">
-                        <text className="wkf-seal__text">
-                            <textPath href="#wkf-seal-path" textLength="458">
-                                {sealText}
-                            </textPath>
-                        </text>
-                    </g>
+                    {sealText ? (
+                        <g className="wkf-seal__ring">
+                            <text className="wkf-seal__text">
+                                <textPath href="#wkf-seal-path" textLength="458">
+                                    {sealText}
+                                </textPath>
+                            </text>
+                        </g>
+                    ) : null}
                     <g className="wkf-seal__star">
                         <path
                             d="M100 80v40M80 100h40M86 86l28 28M114 86L86 114"
@@ -136,15 +146,15 @@ function ContactView() {
     );
 }
 
-export function renderView(view: ViewKey) {
+export function renderView(view: ViewKey, content: ViewContent = {}) {
     switch (view) {
         case 'works':
-            return <WorksView />;
+            return <WorksView works={content.works} />;
         case 'about':
-            return <AboutView />;
+            return <AboutView about={content.about} />;
         case 'contact':
-            return <ContactView />;
+            return <ContactView contact={content.contact} />;
         default:
-            return <HomeView />;
+            return <HomeView hero={content.hero} />;
     }
 }

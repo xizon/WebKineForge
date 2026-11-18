@@ -2,11 +2,23 @@ import './style.css';
 
 
 interface Hero3DProps {
+    eyebrow?: string;
+    title?: string;
+    accent?: string;
+    description?: string;
+    nextLabel?: string;
     nextSelector?: string;
 }
 
 
-export function Template({ nextSelector }: Hero3DProps) {
+export function Template({
+    eyebrow = '',
+    title = '',
+    accent = '',
+    description = '',
+    nextLabel = '',
+    nextSelector,
+}: Hero3DProps) {
     return (
         <section
             className="wkf-hero"
@@ -21,15 +33,23 @@ export function Template({ nextSelector }: Hero3DProps) {
             <div className="wkf-hero__cross" aria-hidden="true"></div>
 
             <div className="wkf-hero__copy">
-                <p className="wkf-hero__eyebrow">
-                    <span className="wkf-hero__pip" aria-hidden="true"></span>
-                    Full-stack developer
-                </p>
-                <h1 className="wkf-hero__title">
-                    I build the product
-                    <span className="wkf-hero__accent">from the pixel to the process.</span>
-                </h1>
-                <p className="wkf-hero__description">Interface, application, and infrastructure. Motion belongs to the work, not a coat of paint added at the end.</p>
+                {eyebrow ? (
+                    <p className="wkf-hero__eyebrow">
+                        <span className="wkf-hero__pip" aria-hidden="true"></span>
+                        {eyebrow}
+                    </p>
+                ) : null}
+                {title || accent ? (
+                    <h1 className="wkf-hero__title">
+                        {title}
+                        {accent ? (
+                            <span className="wkf-hero__accent">{accent}</span>
+                        ) : null}
+                    </h1>
+                ) : null}
+                {description ? (
+                    <p className="wkf-hero__description">{description}</p>
+                ) : null}
             </div>
 
             <button
@@ -37,7 +57,9 @@ export function Template({ nextSelector }: Hero3DProps) {
                 type="button"
                 data-scroll-next=""
             >
-                <span className="wkf-hero__next-label">Scroll</span>
+                {nextLabel && nextLabel !== '' ? (
+                    <span className="wkf-hero__next-label">{nextLabel}</span>
+                ) : null}
                 <span className="wkf-hero__next-arrow" aria-hidden="true"></span>
             </button>
         </section>

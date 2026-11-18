@@ -50,7 +50,7 @@ export default function SamplePage() {
                     ]}
                 />
                 <nav className="wkf:bg-gradient-to-r wkf:from-blue-600 wkf:to-violet-600 wkf:font-serif wkf:text-gray-400 wkf:fixed wkf:left-0 wkf:top-0 wkf:z-[100] wkf:m-0 wkf:block wkf:w-screen wkf:bg-[rgba(255,255,255,0.1)] wkf:p-5 wkf:text-[1.2rem] wkf:backdrop-blur-[12px]">
-                    <Logo theme="light" />
+                    <Logo theme="light" link="./samplepage-1.html" />
                 </nav>
             </header>
 

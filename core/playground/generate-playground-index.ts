@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { marked } from 'marked';
 import { loadSite } from '../site/load-site.ts';
 
 import { createComponentRegistry } from './component-registry.ts';
@@ -13,7 +14,6 @@ import {
 import type {
     PlaygroundIndexComponent,
 } from '../utils/types.ts';
-
 
 async function main() {
     const projectRoot = process.cwd();
@@ -81,7 +81,8 @@ async function main() {
 
         const result = analyzeComponentExamples(
             source,
-            registry
+            registry,
+            componentDirectory
         );
 
         const entryDir = path.join(
