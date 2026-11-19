@@ -105,19 +105,16 @@ Do not use colon-style custom names unless there is a specific reason to do so.
 
 ### 3.4 Unprefixed Custom Classes & IDs
 
-- Unprefixed, colon-free custom class and ID names are permitted when no Tailwind prefix is configured or when following an existing unprefixed Site convention.
-- Examples:
-  - `.product-card`
-  - `.my-product-card__title`
-  - `#product-gallery`
-
-When a prefix is configured, prefer the configured prefix for new custom class and ID names.
+- Unprefixed, colon-free custom **class** names may be used when no Tailwind prefix is configured or when following an existing unprefixed Site convention.
+- Examples: `.product-card`, `.my-product-card__title`.
+- **Custom IDs are stricter:** when a Tailwind prefix is configured, every project-owned ID must use that prefix followed by a hyphen (for example, `wkf-product-gallery`). Do not create or retain unprefixed project-owned IDs in a prefixed Site.
+- When no prefix is configured, use a meaningful, namespaced ID such as `product-gallery`.
 
 ### 3.5 No Mixing Within a Site
 
-- Never mix prefixed and unprefixed **custom class and ID naming conventions** within the same Site.
-- Keep one consistent custom naming convention across all components and pages in that Site.
-- This restriction applies only to custom class and ID names. It does not prohibit using Tailwind utilities alongside custom classes.
+- Never mix prefixed and unprefixed **custom class** naming conventions within the same Site.
+- For IDs, the rule is mandatory: if the Site has a configured prefix, all project-owned IDs must use `<prefix>-...`; do not make exceptions based on older page conventions.
+- This restriction applies only to custom names. It does not prohibit using Tailwind utilities alongside custom classes.
 
 For example, the following is valid when the Site uses `prefix(wkf)`:
 
@@ -161,9 +158,9 @@ The following table distinguishes Tailwind utilities, recommended custom names, 
 | **Custom modifier class** | `className="wkf-primary-menu--light"` | `.wkf-primary-menu--light { ... }` | `element.querySelector('.wkf-primary-menu--light')` | BEM-style modifier |
 | **Recommended custom ID** | `id="wkf-primary-menu"` | `#wkf-primary-menu { ... }` | `document.querySelector('#wkf-primary-menu')` | No escaping required |
 | **Colon-style custom class (allowed)** | `className="wkf:primary-menu"` | `.wkf\:primary-menu { ... }` | `element.querySelector('.wkf\\:primary-menu')` | Escape colons in selectors |
-| **Colon-style custom ID (allowed)** | `id="wkf:primary-menu"` | `#wkf\:primary-menu { ... }` | `document.querySelector('#wkf\\:primary-menu')` | Escape colons in selectors |
+| **Legacy colon-style custom ID (avoid)** | `id="wkf:primary-menu"` | `#wkf\:primary-menu { ... }` | `document.querySelector('#wkf\\:primary-menu')` | Migrate to `wkf-primary-menu` |
 | **Unprefixed custom class** | `className="my-primary-menu"` | `.my-primary-menu { ... }` | `element.querySelector('.my-primary-menu')` | Allowed when consistent with the Site convention |
-| **Unprefixed custom ID** | `id="my-primary-menu"` | `#my-primary-menu { ... }` | `document.querySelector('#my-primary-menu')` | Allowed when consistent with the Site convention |
+| **Unprefixed custom ID** | `id="my-primary-menu"` | `#my-primary-menu { ... }` | `document.querySelector('#my-primary-menu')` | Not allowed when the Site has a configured prefix |
 | **Tailwind utility class** | `className="wkf:flex wkf:text-xl"` | *(No custom CSS needed)* | N/A | Follows `prefix(...)` in `tailwind.css` |
 | **Tailwind state variant** | `className="wkf:hover:bg-black"` | *(No custom CSS needed)* | N/A | Prefix precedes the variant |
 
@@ -628,7 +625,8 @@ Before completing a component or page, verify the following:
 - [ ] `wkf:` (prefix + colon) is used only for Tailwind utilities; custom classes and IDs use `wkf-` (prefix + hyphen).
 - [ ] Custom classes include the component or page name as a namespace.
 - [ ] Custom IDs use meaningful component or page namespaces.
-- [ ] When a prefix is configured, custom class and ID names use the configured prefix followed by a hyphen by default (e.g., `wkf-primary-menu`).
+- [ ] When a prefix is configured, every project-owned ID uses the configured prefix followed by a hyphen (e.g., `wkf-primary-menu`); no unprefixed custom IDs remain.
+- [ ] Every ID reference is updated consistently: `href` fragments, `getElementById`, `querySelector` / `querySelectorAll`, `closest` / `matches`, and component props such as `nextSelector`.
 - [ ] No new colon-style custom class or ID names are introduced; retain them only when maintaining existing code, and escape every selector correctly.
 - [ ] Prefixed and unprefixed custom naming conventions are not mixed within the same Site.
 - [ ] Tailwind utilities and custom class names are correctly distinguished; using `wkf:` utilities alongside `wkf-` custom classes is valid.

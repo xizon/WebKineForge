@@ -20,7 +20,7 @@ Read first: `.agent/knowledge/style-rules.md`, `.agent/knowledge/page-rules.md`,
 - Add/remove/reorder components in `index.tsx`; keep imports and JSX in sync.
 - Do not move interaction logic into the page; use components.
 - If an old page still has a runtime import or a `typeof window !== 'undefined'` mount block, remove it (mounting is automatic) and tell the user.
-- Follow `style-rules.md` and `page-rules.md` for all styling and `bodyClass` updates.
+- Follow `style-rules.md` and `page-rules.md` for all styling and `bodyClass` updates. Every project-owned ID and every reference to it must use the configured Site prefix plus a hyphen (e.g. `wkf-section-id`, `href="#wkf-section-id"`).
 - If an old page still has a separate entry file or a manifest `entry`, merge it into `index.tsx` and remove the field (tell the user).
 
 ## Validate

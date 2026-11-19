@@ -272,13 +272,13 @@ export default function SamplePage() {
                         accent="from the pixel to the process."
                         description="Interface, application, and infrastructure. Motion belongs to the work, not a coat of paint added at the end."
                         nextLabel="Scroll"
-                        nextSelector="#next-section"
+                        nextSelector="#wkf-next-section"
                     />
                 </SceneItem>
 
                 <SceneItem coveredOpacity={0.35}>
                     <Parallax
-                        id="next-section"
+                        id="wkf-next-section"
                         image="./assets/images/parallax-bg.jpg"
                         imageAlt=""
                         eyebrow="01 — Portrait"

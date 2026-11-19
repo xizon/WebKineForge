@@ -58,7 +58,7 @@ export default function SamplePage() {
 
 {/* Hero */}
 <section
-    id="home"
+    id="wkf-home"
     className="wkf:relative wkf:z-10 wkf:mx-auto wkf:grid wkf:max-w-[1200px] wkf:grid-cols-1 wkf:items-center wkf:gap-14 wkf:px-6 wkf:pb-24 wkf:pt-24 wkf:lg:grid-cols-[0.85fr_1.15fr] wkf:lg:gap-20 wkf:lg:pb-32 wkf:lg:pt-32"
 >
     {/* Left: Profile Card */}
@@ -179,7 +179,7 @@ export default function SamplePage() {
 
         <div className="wkf:mt-9 wkf:flex wkf:flex-wrap wkf:items-center wkf:gap-4">
             <a
-                href="#projects"
+                href="#wkf-projects"
                 data-wkf-magnetic="0.28"
                 className="wkf:group wkf:inline-flex wkf:items-center wkf:rounded-full wkf:bg-gradient-to-r wkf:from-blue-600 wkf:to-violet-600 wkf:px-7 wkf:py-3.5 wkf:text-sm wkf:font-bold wkf:text-white wkf:shadow-lg wkf:shadow-violet-200 wkf:transition-all wkf:hover:-translate-y-1 wkf:hover:shadow-xl"
             >
@@ -190,7 +190,7 @@ export default function SamplePage() {
             </a>
 
             <a
-                href="#about"
+                href="#wkf-about"
                 data-wkf-magnetic="0.2"
                 className="wkf:inline-flex wkf:items-center wkf:rounded-full wkf:border wkf:border-slate-200 wkf:bg-white/90 wkf:px-7 wkf:py-3.5 wkf:text-sm wkf:font-bold wkf:text-slate-700 wkf:backdrop-blur-md wkf:transition-all wkf:hover:border-violet-300 wkf:hover:text-violet-700"
             >
@@ -223,7 +223,7 @@ export default function SamplePage() {
 
 
             {/* About */}
-            <section id="about" className="wkf:relative wkf:z-10 wkf:bg-white/90 wkf:py-24 wkf:backdrop-blur-sm">
+            <section id="wkf-about" className="wkf:relative wkf:z-10 wkf:bg-white/90 wkf:py-24 wkf:backdrop-blur-sm">
                 <div data-wkf-reveal className="wkf:mx-auto wkf:grid wkf:max-w-[1200px] wkf:gap-12 wkf:px-6 wkf:md:grid-cols-[0.8fr_1.2fr]">
                     <div>
                         <p className="wkf:text-xs wkf:font-bold wkf:uppercase wkf:tracking-[0.2em] wkf:text-violet-600">01 / About Me</p>
@@ -245,7 +245,7 @@ export default function SamplePage() {
             </section>
 
             {/* Projects with interactive category filters */}
-            <section id="projects" className="wkf:relative wkf:z-10 wkf:py-24">
+            <section id="wkf-projects" className="wkf:relative wkf:z-10 wkf:py-24">
                 <div className="wkf:mx-auto wkf:max-w-[1200px] wkf:px-6">
                     <div data-wkf-reveal className="wkf:flex wkf:flex-col wkf:justify-between wkf:gap-5 wkf:sm:flex-row wkf:sm:items-end">
                         <div>
@@ -399,7 +399,7 @@ export default function SamplePage() {
             </section>
 
             {/* Experience */}
-            <section id="experience" className="wkf:relative wkf:z-10 wkf:bg-white/90 wkf:py-24 wkf:backdrop-blur-sm">
+            <section id="wkf-experience" className="wkf:relative wkf:z-10 wkf:bg-white/90 wkf:py-24 wkf:backdrop-blur-sm">
                 <div data-wkf-reveal className="wkf:mx-auto wkf:max-w-[1200px] wkf:px-6">
                     <p className="wkf:text-xs wkf:font-bold wkf:uppercase wkf:tracking-[0.2em] wkf:text-violet-600">03 / Career Journey</p>
                     <h2 className="wkf:mt-4 wkf:text-4xl wkf:font-extrabold wkf:tracking-tight wkf:sm:text-5xl">Experience & Education<span className="wkf:text-violet-600">.</span></h2>
@@ -461,7 +461,7 @@ export default function SamplePage() {
             </section>
 
             {/* Skills */}
-            <section id="skills" className="wkf:relative wkf:z-10 wkf:py-14">
+            <section id="wkf-skills" className="wkf:relative wkf:z-10 wkf:py-14">
                 <div className="wkf:mx-auto wkf:max-w-[1200px] wkf:px-6">
                     <div data-wkf-reveal>
                         <p className="wkf:text-xs wkf:font-bold wkf:uppercase wkf:tracking-[0.2em] wkf:text-violet-600">04 / My Toolkit</p>
@@ -499,7 +499,7 @@ export default function SamplePage() {
             </section>
 
             {/* Contact */}
-            <section id="contact" className="wkf:relative wkf:z-10 wkf:px-6 wkf:pb-24 wkf:pt-12">
+            <section id="wkf-contact" className="wkf:relative wkf:z-10 wkf:px-6 wkf:pb-24 wkf:pt-12">
                 <div data-wkf-reveal className="wkf:relative wkf:mx-auto wkf:max-w-[1200px] wkf:overflow-hidden wkf:rounded-[2rem] wkf:bg-gradient-to-br wkf:from-[#3447b8] wkf:via-[#6546c9] wkf:to-[#923fd0] wkf:px-8 wkf:py-16 wkf:text-center wkf:shadow-2xl wkf:shadow-violet-200/70 wkf:sm:px-16 wkf:sm:py-20">
                     <div className="wkf:animate-[wkf-spin-slow_24s_linear_infinite] wkf:absolute wkf:-right-20 wkf:-top-32 wkf:h-72 wkf:w-72 wkf:rounded-full wkf:border wkf:border-dashed wkf:border-white/20" />
                     <div className="wkf:animate-[wkf-spin-slow_24s_linear_infinite] wkf:absolute wkf:-bottom-40 wkf:-left-20 wkf:h-80 wkf:w-80 wkf:rounded-full wkf:border wkf:border-white/15" />
@@ -521,7 +521,7 @@ export default function SamplePage() {
             {/* Footer */}
             <footer className="wkf:relative wkf:z-10 wkf:border-t wkf:border-slate-200/80 wkf:bg-white/70 wkf:backdrop-blur-md">
                 <div className="wkf:mx-auto wkf:flex wkf:max-w-[1200px] wkf:flex-col wkf:items-center wkf:justify-between wkf:gap-5 wkf:px-6 wkf:py-8 wkf:sm:flex-row">
-                    <a href="#home" className="wkf:text-lg wkf:font-extrabold wkf:tracking-tight">A web creation toolkit for developers<span className="wkf:text-violet-600">.</span></a>
+                    <a href="#wkf-home" className="wkf:text-lg wkf:font-extrabold wkf:tracking-tight">A web creation toolkit for developers<span className="wkf:text-violet-600">.</span></a>
                     <p className="wkf:text-xs wkf:text-slate-400">&copy; 2026 WebKineForge.</p>
                     <div className="wkf:flex wkf:gap-5 wkf:text-xs wkf:font-semibold wkf:text-slate-500">
                         <a href="#" target="_blank" rel="noreferrer" className="wkf:transition-colors wkf:hover:text-violet-600">GitHub ↗</a>

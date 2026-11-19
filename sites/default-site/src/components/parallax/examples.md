@@ -12,7 +12,7 @@ Effect of the image background.
 
 ```tsx
 <Parallax
-    id="next-section"
+    id="wkf-next-section"
     image="./assets/images/parallax-bg.jpg"
     imageAlt=""
     eyebrow="01 — Portrait"

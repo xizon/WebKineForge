@@ -68,7 +68,7 @@ Follow all component implementation, styling, and documentation requirements def
 - Whenever the component's template, public props, default values, behavior, usage, or dependencies change, update `examples.md` and `manifest.json` accordingly.
 - If an existing `examples.md` still uses `import` / `export` or `...` placeholders, rewrite its examples to the bare JSX form in `component-rules.md` while you are editing it.
 - If public props or component behavior change, inspect and update any pages that use the component.
-- Follow `style-rules.md` and `component-rules.md` for all style and class updates.
+- Follow `style-rules.md` and `component-rules.md` for all style and class updates. When the Site has a configured prefix, every project-owned ID in templates/examples and every corresponding JS/CSS/fragment reference must use `<prefix>-` (e.g. `wkf-component-target`); do not introduce unprefixed custom IDs.
 - Animation problems: start with `controller.ts` and follow the cleanup rules in `component-rules.md`.
 - If other Sites reference the component, build those Sites too:
 

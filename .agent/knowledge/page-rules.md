@@ -63,7 +63,7 @@ All styling rules live in **[style-rules.md](./style-rules.md)**. Page-specific 
 
 ### `bodyClass`
 - Used in `style.css` to differentiate page-level themes or layouts. Use descriptive, page-scoped names (no generic names).
-- Recommended to carry the Site prefix followed by a hyphen (e.g., `.wkf-samplepage-1`, no escaping needed), though unprefixed names are also permitted. Avoid colon-style names: `wkf:` is reserved for Tailwind utilities, and if one is used anyway, escape it in CSS as `.wkf\:samplepage-1`. Follow the existing convention of the Site and never mix both styles in the same Site (see **[style-rules.md](./style-rules.md)**).
+- Recommended to carry the Site prefix followed by a hyphen (e.g., `.wkf-samplepage-1`, no escaping needed), though unprefixed class names are also permitted. For project-owned IDs, a configured Site prefix is mandatory (`wkf-section-id`, not `section-id`). Avoid colon-style names: `wkf:` is reserved for Tailwind utilities, and if one is used anyway, escape it in CSS as `.wkf\:samplepage-1`. Follow the existing convention of the Site and never mix both styles in the same Site (see **[style-rules.md](./style-rules.md)**).
 
 **There is no `entry` field. Remove it if found in an old page.**
 

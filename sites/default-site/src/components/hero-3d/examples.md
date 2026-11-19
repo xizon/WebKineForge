@@ -30,10 +30,10 @@ Customize the target section for the scroll interaction by passing a CSS selecto
     accent="from the pixel to the process."
     description="Interface, application, and infrastructure. Motion belongs to the work, not a coat of paint added at the end."
     nextLabel="Scroll"
-    nextSelector="#next-section"
+    nextSelector="#wkf-next-section"
   />
 
-  <section id="next-section">
+  <section id="wkf-next-section">
     Next section
   </section>
 </>
