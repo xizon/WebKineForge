@@ -3,6 +3,7 @@
 A static-first toolbox for interactive web pages, built on a multi-Site architecture. TypeScript + TSX (build-time templates only) · Tailwind CSS v4 · Vanilla CSS · native interaction (GSAP / Three.js, etc.).
 All detailed development rules live in `.agent/`. Read them on demand through the routing table below; do not read them all.
 
+
 ## Core principles
 
 - Templates output static HTML only: component -> `template.tsx`, page -> the default export of `index.tsx`. Controllers handle browser interaction and animation, and only components have them: `controller.ts` (exports `mount`). A page contains no browser code.
@@ -26,6 +27,8 @@ All detailed development rules live in `.agent/`. Read them on demand through th
 - Do not change the existing architecture, registration mechanism, or public APIs on your own initiative.
 - Do not crawl the whole project or any `src/components/` directory. To choose a component, read only `sites/<site>/component-index.json`.
 - Do not start `dev` / `preview` (long-running processes that occupy port 3000) unless the user asks.
+- Do not read the body of every file in `.agent/packs/`. Read frontmatter only, then the one matched pack.
+
 
 ## Task routing
 
@@ -39,6 +42,8 @@ All detailed development rules live in `.agent/`. Read them on demand through th
 | Fix an animation problem | The component's `controller.ts` | `.agent/knowledge/component-rules.md` (cleanup rules) |
 | Build / create / validate commands | `.agent/knowledge/cli.md` | — |
 | Change the build system | Only after explicit user authorization, inspect the build files | `core/`, `vite.config.ts`, `runtime/` |
+| Vague request to make a site/page ("make a company site for X", "build me a portfolio") | `.agent/skills/wizard-generate-site/SKILL.md` | the matched `.agent/packs/<name>.md` (frontmatter first, body only for the match) |
+
 
 Project-level constraints: `.agent/knowledge/architecture.md`.
 

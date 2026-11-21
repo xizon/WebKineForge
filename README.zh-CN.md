@@ -35,6 +35,8 @@ npx webkineforge add default-site
 | 内容为主、少量交互 | **[Astro](https://astro.build)** | 零 JS 默认（Islands 按需） | Astro 组件语法 + 前端基础 | 依赖自身约定，无专门索引 | 官方主题 / Starlight |
 | 全栈应用、实时数据 | **[Next.js](https://nextjs.org)** / **[Nuxt](https://nuxt.com)** | React/Vue 运行时 | 框架全家桶 | 生态成熟但无统一结构约定 | 模板市场丰富 |
 | 设计师可视化建站 | **[Framer](https://framer.com)** / **[Webflow](https://webflow.com)** | 平台托管 | 基本无需代码 | 平台内置 AI | 平台模板库 |
+| 使用设计工具设计并发布 | **[Figma Sites](https://www.figma.com/sites)** | 平台托管 | 设计基础 | 平台内置 AI | 平台模板库 |
+| 快速建站，无需编码 | **[Wix](https://www.wix.com)** / **[Squarespace](https://www.squarespace.com)** | 平台托管 | 基本无需代码 | 平台内置 AI | 平台模板库 |
 | 极简网站 | **[11ty](https://www.11ty.dev)** / 纯手写 | 零 | 几乎为零 | 完全靠人工约定 | 无 |
 
 ## ⚠️ 什么时候别选我
